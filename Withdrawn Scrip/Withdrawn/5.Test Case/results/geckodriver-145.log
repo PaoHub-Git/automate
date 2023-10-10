@@ -1,0 +1,21 @@
+1693996442202	geckodriver	INFO	Listening on 127.0.0.1:64074
+1693996448179	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64075" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofileulrJzG"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693996448515	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693996448569	Marionette	INFO	Listening on port 64087
+WebDriver BiDi listening on ws://127.0.0.1:64075
+Read port: 64087
+1693996448776	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64075/devtools/browser/83c99c51-1b51-4b8e-9a32-5309a7bee3ea
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+JavaScript warning: https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 273 > eval, line 24: Script terminated by timeout at:
+logComponentDefUsage@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:24:39
+onWindowClose@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:270
+b@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+t@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:1:14359
+
+1693996518923	Marionette	INFO	Stopped listening on port 64087
+Dynamically enable window occlusion 1

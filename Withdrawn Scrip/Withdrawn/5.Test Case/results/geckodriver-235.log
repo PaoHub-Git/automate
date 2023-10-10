@@ -1,0 +1,22 @@
+1694078773112	geckodriver	INFO	Listening on 127.0.0.1:64411
+1694078779404	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64412" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofileKVFMNV"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694078779754	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1694078779808	Marionette	INFO	Listening on port 64423
+WebDriver BiDi listening on ws://127.0.0.1:64412
+Read port: 64423
+1694078780044	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64412/devtools/browser/6ff957a2-a1b4-4677-bcf4-960094d210c9
+1694078783740	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:429:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:178:31
+e@https://www.salesforce.com/etc/clientlibs/sfdc-aem-master/clientlibs_www_tags.min.js:2:111
+@https://www.salesforce.com/etc/clientlibs/sfdc-aem-master/clientlibs_www_tags.min.js:2:146
+@https://www.salesforce.com/etc/clientlibs/sfdc-aem-master/clientlibs_www_tags.min.js:2:395
+@https://www.salesforce.com/etc/clientlibs/sfdc-aem-master/clientlibs_www_tags.min.js:2:399
+1694078796855	Marionette	INFO	Stopped listening on port 64423
+Dynamically enable window occlusion 1

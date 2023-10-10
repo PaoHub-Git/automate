@@ -1,0 +1,52 @@
+1692935320840	geckodriver	INFO	Listening on 127.0.0.1:57493
+1692935326156	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57494" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofileS4IhIF"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1692935326995	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1692935327081	Marionette	INFO	Listening on port 57508
+WebDriver BiDi listening on ws://127.0.0.1:57494
+Read port: 57508
+1692935327404	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:57494/devtools/browser/87f3000e-4a29-4374-b495-6f1fe2da0bf9
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--sit2.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--sit2.sandbox.my.salesforce.com."
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofileS4IhIF\thumbnails) because it does not exist
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 597))
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofileS4IhIF\thumbnails) because it does not exist
+JavaScript warning: https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 273 > eval, line 1: Script terminated by timeout at:
+getAllMessages@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/shared.js:1:724
+getRawContentsOfCoreEnvelope@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/simple_collector.js:1:2017
+r@https://cardxscb--sit2.sandbox.lightning.force.com/components/instrumentation/o11ySecondaryLoaderWithImports.js:1:310
+getEncodedO11yLogs@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:10:64
+sendBeacon/<@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:14:236
+initializeBeacon/this.preservedAuraCallback<@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:3:255
+b@https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+sendBeacon@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:409
+onWindowClose@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:362
+b@https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+t@https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:1:14359
+
+1692939145260	Marionette	INFO	Stopped listening on port 57508
+Dynamically enable window occlusion 1
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 22264, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 21204, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443

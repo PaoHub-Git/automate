@@ -1,0 +1,31 @@
+1693568467072	geckodriver	INFO	Listening on 127.0.0.1:61087
+1693568473514	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61088" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofile8qTTex"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693568474233	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693568474277	Marionette	INFO	Listening on port 61103
+WebDriver BiDi listening on ws://127.0.0.1:61088
+Read port: 61103
+1693568474454	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:61088/devtools/browser/d7ff3c93-e2b4-49f1-9d10-03557630865f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+1693568501927	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1693568502113	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofile8qTTex\thumbnails) because it does not exist
+1693568508348	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:429:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:178:31
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofile8qTTex\thumbnails) because it does not exist
+1693791261283	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, channelStatus: 2152398878, errorCode: 2, reason: error
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofile8qTTex\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofile8qTTex\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofile8qTTex\thumbnails) because it does not exist
+1693803581997	Marionette	INFO	Stopped listening on port 61103
+Dynamically enable window occlusion 1

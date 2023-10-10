@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.0 on win32)" generated="20231009 18:22:35.563" rpa="true" schemaversion="4">
+<suite id="s1" name="2.Pending-IncomeMaker" source="D:\Scrip onborad and los\Los\5.Test Case\2.Pending-IncomeMaker.robot">
+<test id="s1-t1" name="Run Task" line="7">
+<for flavor="IN RANGE">
+<var>${ROW}</var>
+<value>2</value>
+<value>${MAX_ROW}</value>
+<iter>
+<var name="${ROW}">2</var>
+<kw name="Read Excel Data" library="2.Input_data">
+<var>${Ref no_Excel}</var>
+<arg>${ROW}</arg>
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>${FILE_PATH}</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20231009 18:22:36.518" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001451B1CBBE0&gt;</msg>
+<status status="PASS" starttime="20231009 18:22:36.512" endtime="20231009 18:22:36.518"/>
+</kw>
+<kw name="Get Cell Value" library="RPA.Excel.Files">
+<var>${Ref no_Excel}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<doc>Get a cell value in the given worksheet.</doc>
+<msg timestamp="20231009 18:22:36.519" level="INFO">${Ref no_Excel} = BT2023100900092</msg>
+<status status="PASS" starttime="20231009 18:22:36.519" endtime="20231009 18:22:36.519"/>
+</kw>
+<kw name="Close Workbook" library="RPA.Excel.Files">
+<doc>Close the active workbook.</doc>
+<msg timestamp="20231009 18:22:36.519" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001451B1CBBE0&gt;</msg>
+<status status="PASS" starttime="20231009 18:22:36.519" endtime="20231009 18:22:36.519"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Ref no_Excel}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231009 18:22:36.520" level="INFO">BT2023100900092</msg>
+<status status="PASS" starttime="20231009 18:22:36.520" endtime="20231009 18:22:36.520"/>
+</kw>
+<msg timestamp="20231009 18:22:36.521" level="INFO">${Ref no_Excel} = BT2023100900092</msg>
+<status status="PASS" starttime="20231009 18:22:36.512" endtime="20231009 18:22:36.521"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${Ref no_Excel}</var>
+<arg>${Ref no_Excel}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20231009 18:22:36.522" level="INFO">${Ref no_Excel} = BT2023100900092</msg>
+<status status="PASS" starttime="20231009 18:22:36.521" endtime="20231009 18:22:36.522"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isREFEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${Ref no_Excel}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Empty" library="BuiltIn">
+<arg>${Ref no_Excel}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<msg timestamp="20231009 18:22:36.522" level="INFO">Length is 15</msg>
+<msg timestamp="20231009 18:22:36.523" level="FAIL">'BT2023100900092' should be empty.</msg>
+<status status="FAIL" starttime="20231009 18:22:36.522" endtime="20231009 18:22:36.523"/>
+</kw>
+<msg timestamp="20231009 18:22:36.523" level="INFO">${isREFEmpty} = False</msg>
+<status status="PASS" starttime="20231009 18:22:36.522" endtime="20231009 18:22:36.523"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${isREFEmpty}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20231009 18:22:36.523" endtime="20231009 18:22:36.523"/>
+</kw>
+<kw name="Open Google with Profile 1" library="1.Keyword">
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<kw name="Get Chrome Options" library="custom_library">
+<var>${chrome_options}</var>
+<arg>${PROFILE_PATH}</arg>
+<arg>Profile 1</arg>
+<msg timestamp="20231009 18:22:36.523" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001451B170DF0&gt;</msg>
+<status status="PASS" starttime="20231009 18:22:36.523" endtime="20231009 18:22:36.523"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROMEDRIVER_PATH}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231009 18:22:36.524" level="INFO">Opening browser 'Chrome' to base url 'https://cardxscb--uat.sandbox.my.salesforce.com/'.</msg>
+<status status="PASS" starttime="20231009 18:22:36.523" endtime="20231009 18:22:38.651"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231009 18:22:38.651" endtime="20231009 18:22:38.652"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231009 18:22:38.652" endtime="20231009 18:22:38.652"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231009 18:22:38.652" endtime="20231009 18:22:38.655"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>//*[@id="Login"]</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231009 18:22:38.655" endtime="20231009 18:22:38.687"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 18:22:38.688" level="INFO">Typing text 'Alonggorn.p@cardx.uat' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20231009 18:22:38.688" endtime="20231009 18:22:38.767"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 18:22:38.768" level="INFO">Typing text 'Paohub1993#' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20231009 18:22:38.767" endtime="20231009 18:22:38.854"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=Login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:22:38.854" level="INFO">Clicking element 'id=Login'.</msg>
+<status status="PASS" starttime="20231009 18:22:38.854" endtime="20231009 18:22:40.713"/>
+</kw>
+<kw name="Pause Execution" library="Dialogs">
+<arg>Please enter "Salesforce Authenticator"</arg>
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="PASS" starttime="20231009 18:22:40.713" endtime="20231009 18:22:49.793"/>
+</kw>
+<status status="PASS" starttime="20231009 18:22:36.523" endtime="20231009 18:22:49.793"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@aria-label="Search"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:22:49.793" endtime="20231009 18:22:53.625"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:22:59.634" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20231009 18:22:53.626" endtime="20231009 18:22:59.634"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@aria-label="Search"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:22:59.635" level="INFO">Clicking element '//*[@aria-label="Search"]'.</msg>
+<status status="PASS" starttime="20231009 18:22:59.634" endtime="20231009 18:22:59.805"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@placeholder="Search..."]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:22:59.805" endtime="20231009 18:22:59.859"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@placeholder="Search..."]</arg>
+<arg>${Ref no_Excel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 18:22:59.860" level="INFO">Typing text 'BT2023100900092' into text field '//*[@placeholder="Search..."]'.</msg>
+<status status="PASS" starttime="20231009 18:22:59.860" endtime="20231009 18:23:00.071"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//span/mark[contains(text(), '${Ref no_Excel}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:00.071" endtime="20231009 18:23:00.552"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span/mark[contains(text(), '${Ref no_Excel}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:00.553" level="INFO">Clicking element '//span/mark[contains(text(), 'BT2023100900092')]'.</msg>
+<status status="PASS" starttime="20231009 18:23:00.552" endtime="20231009 18:23:00.632"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${STATUS_Income Maker}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:00.632" endtime="20231009 18:23:05.560"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${status_text}</var>
+<arg>${STATUS_Income Maker}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:05.588" level="INFO">${status_text} = Pending-IncomeMaker</msg>
+<status status="PASS" starttime="20231009 18:23:05.560" endtime="20231009 18:23:05.588"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status_text}' != 'Pending-IncomeMaker'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231009 18:23:05.588" endtime="20231009 18:23:05.589"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:23:10.601" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 18:23:05.589" endtime="20231009 18:23:10.601"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${NEXT_BUTTON}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:10.603" level="INFO">Executing JavaScript:
+document.evaluate("//div[@class='insext-btn' and @title='Show Salesforce details (Alt+I / Shift+Alt+I)']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:10.602" endtime="20231009 18:23:10.623"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:23:15.630" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 18:23:10.623" endtime="20231009 18:23:15.630"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css=iframe.insext-popup</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20231009 18:23:15.631" level="INFO">Selecting frame 'css=iframe.insext-popup'.</msg>
+<status status="PASS" starttime="20231009 18:23:15.630" endtime="20231009 18:23:15.673"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//li[@data-aspect='users']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:15.673" level="INFO">Clicking element '//li[@data-aspect='users']'.</msg>
+<status status="PASS" starttime="20231009 18:23:15.673" endtime="20231009 18:23:15.769"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="all-data-input"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:15.770" level="INFO">Clicking element '//*[@class="all-data-input"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:15.770" endtime="20231009 18:23:15.868"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@class="all-data-input"]</arg>
+<arg>Income Maker AuthLevel30</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:15.868" level="INFO">Typing text 'Income Maker AuthLevel30' into text field '//*[@class="all-data-input"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:15.868" endtime="20231009 18:23:15.958"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//mark[contains(text(), 'Income Maker AuthLevel30')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:15.958" endtime="20231009 18:23:16.633"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//mark[contains(text(), 'Income Maker AuthLevel30')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:16.634" level="INFO">Clicking element '//mark[contains(text(), 'Income Maker AuthLevel30')]'.</msg>
+<status status="PASS" starttime="20231009 18:23:16.633" endtime="20231009 18:23:16.709"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//*[@class="button button-secondary" and text()="Try login as"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:16.709" endtime="20231009 18:23:17.170"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@class="button button-secondary" and text()="Try login as"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:17.171" level="INFO">Clicking element '//*[@class="button button-secondary" and text()="Try login as"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:17.170" endtime="20231009 18:23:17.264"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:23:32.274" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20231009 18:23:17.264" endtime="20231009 18:23:32.274"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element1}</var>
+<arg>return document.evaluate('//*[@type="button" and @title="Show Navigation Menu"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:32.275" level="INFO">Executing JavaScript:
+return document.evaluate('//*[@type="button" and @title="Show Navigation Menu"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:32.280" level="INFO">${element1} = &lt;selenium.webdriver.remote.webelement.WebElement (session="982f9ec09f9c3f7b3342bf05fc7a9c1c", element="2E832D5AC7C6C887EB4497D69D4214F3_element_365")&gt;</msg>
+<status status="PASS" starttime="20231009 18:23:32.274" endtime="20231009 18:23:32.280"/>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<arg>${element1}</arg>
+<arg>None</arg>
+<arg>msg=Element not found.</arg>
+<doc>Fails if the given objects are equal.</doc>
+<msg timestamp="20231009 18:23:32.281" level="INFO">Argument types are:
+&lt;class 'selenium.webdriver.remote.webelement.WebElement'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231009 18:23:32.280" endtime="20231009 18:23:32.281"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${EN}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//*[@type="button" and @title="Show Navigation Menu"]</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@type="button" and @title="Show Navigation Menu"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:32.281" endtime="20231009 18:23:32.300"/>
+</kw>
+<msg timestamp="20231009 18:23:32.300" level="INFO">${EN} = True</msg>
+<status status="PASS" starttime="20231009 18:23:32.281" endtime="20231009 18:23:32.300"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${element2}</var>
+<arg>return document.evaluate('//*[@type="button" and @title="แสดงเมนูการนำทาง"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:32.301" level="INFO">Executing JavaScript:
+return document.evaluate('//*[@type="button" and @title="แสดงเมนูการนำทาง"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:32.307" level="INFO">${element2} = None</msg>
+<status status="PASS" starttime="20231009 18:23:32.300" endtime="20231009 18:23:32.307"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${TH}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//*[@type="button" and @title="แสดงเมนูการนำทาง"]</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@type="button" and @title="แสดงเมนูการนำทาง"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20231009 18:23:37.575" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../6.Test%20Results/Test%20Result001/selenium-screenshot-9.png"&gt;&lt;img src="../../6.Test%20Results/Test%20Result001/selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231009 18:23:37.575" level="FAIL">Element '//*[@type="button" and @title="แสดงเมนูการนำทาง"]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20231009 18:23:32.307" endtime="20231009 18:23:37.577"/>
+</kw>
+<msg timestamp="20231009 18:23:37.577" level="INFO">${TH} = False</msg>
+<status status="PASS" starttime="20231009 18:23:32.307" endtime="20231009 18:23:37.577"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>10s</arg>
+<arg>Log</arg>
+<arg>Waiting for elements...</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Waiting for elements...</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231009 18:23:37.580" level="INFO">Waiting for elements...</msg>
+<status status="PASS" starttime="20231009 18:23:37.579" endtime="20231009 18:23:37.580"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:37.578" endtime="20231009 18:23:37.580"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${TH}</arg>
+<arg>Run Keywords</arg>
+<arg>Check For Elements language</arg>
+<arg>AND</arg>
+<arg>${element2}=</arg>
+<arg>Execute JavaScript</arg>
+<arg>return document.evaluate('(//span[@class='title slds-truncate' and text()='${Ref no_Excel} | Loan Application'])[1]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>(//span[@class='title slds-truncate' and text()='${Ref no_Excel} | Loan Application'])[1]</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>(//span[@class='title slds-truncate' and text()='${Ref no_Excel} | Loan Application'])[1]</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>4s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231009 18:23:37.580" endtime="20231009 18:23:37.580"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//*[@class="slds-button__icon slds-button__icon_hint"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:37.580" endtime="20231009 18:23:37.610"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>//*[@class="slds-button__icon slds-button__icon_hint"]</arg>
+<arg>0</arg>
+<arg>100</arg>
+<arg>5</arg>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${attempts}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Scroll Element With Offset" library="1.Keyword">
+<arg>${locator}</arg>
+<arg>${offsetX}</arg>
+<arg>${offsetY}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>window.scrollBy(0, ${offsetY});</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:37.615" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button__icon slds-button__icon_hint"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect...</msg>
+<status status="PASS" starttime="20231009 18:23:37.614" endtime="20231009 18:23:37.615"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:37.617" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button__icon slds-button__icon_hint"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+window.scrollBy(0, 100);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:37.615" endtime="20231009 18:23:37.630"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:37.613" endtime="20231009 18:23:37.630"/>
+</kw>
+<kw name="Is Element In Viewport" library="1.Keyword">
+<var>${is_visible}</var>
+<arg>${locator}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:37.631" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button__icon slds-button__icon_hint"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect...</msg>
+<status status="PASS" starttime="20231009 18:23:37.631" endtime="20231009 18:23:37.631"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${is_visible}</var>
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:37.632" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button__icon slds-button__icon_hint"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:37.642" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20231009 18:23:37.631" endtime="20231009 18:23:37.642"/>
+</kw>
+<msg timestamp="20231009 18:23:37.642" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20231009 18:23:37.630" endtime="20231009 18:23:37.642"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${is_visible}'=='True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231009 18:23:37.643" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231009 18:23:37.642" endtime="20231009 18:23:37.643"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:37.613" endtime="20231009 18:23:37.643"/>
+</iter>
+<status status="PASS" starttime="20231009 18:23:37.612" endtime="20231009 18:23:37.643"/>
+</for>
+<status status="PASS" starttime="20231009 18:23:37.610" endtime="20231009 18:23:37.644"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@class="slds-button__icon slds-button__icon_hint"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:37.646" level="INFO">Clicking element '//*[@class="slds-button__icon slds-button__icon_hint"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:37.645" endtime="20231009 18:23:37.744"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:37.745" endtime="20231009 18:23:38.379"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:38.380" level="INFO">Clicking element '//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:38.380" endtime="20231009 18:23:38.524"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//*[@value="change owner"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:38.524" endtime="20231009 18:23:38.548"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@value="change owner"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:38.548" level="INFO">Clicking element '//*[@value="change owner"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:38.548" endtime="20231009 18:23:38.596"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:23:43.602" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231009 18:23:38.597" endtime="20231009 18:23:43.602"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>//*[@class="slds-button slds-button_brand" and text()="Change Owner"]</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231009 18:23:43.602" endtime="20231009 18:23:43.618"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]</arg>
+<arg>0</arg>
+<arg>300</arg>
+<arg>5</arg>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${attempts}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Scroll Element With Offset" library="1.Keyword">
+<arg>${locator}</arg>
+<arg>${offsetX}</arg>
+<arg>${offsetY}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>window.scrollBy(0, ${offsetY});</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:43.620" level="INFO">${js_code} = var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingC...</msg>
+<status status="PASS" starttime="20231009 18:23:43.619" endtime="20231009 18:23:43.620"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:43.621" level="INFO">Executing JavaScript:
+var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+window.scrollBy(0, 300);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:43.620" endtime="20231009 18:23:43.664"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:43.619" endtime="20231009 18:23:43.664"/>
+</kw>
+<kw name="Is Element In Viewport" library="1.Keyword">
+<var>${is_visible}</var>
+<arg>${locator}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:43.665" level="INFO">${js_code} = var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingC...</msg>
+<status status="PASS" starttime="20231009 18:23:43.665" endtime="20231009 18:23:43.665"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${is_visible}</var>
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:43.666" level="INFO">Executing JavaScript:
+var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:43.684" level="INFO">${is_visible} = False</msg>
+<status status="PASS" starttime="20231009 18:23:43.665" endtime="20231009 18:23:43.684"/>
+</kw>
+<msg timestamp="20231009 18:23:43.684" level="INFO">${is_visible} = False</msg>
+<status status="PASS" starttime="20231009 18:23:43.665" endtime="20231009 18:23:43.684"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${is_visible}'=='True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20231009 18:23:43.684" endtime="20231009 18:23:43.684"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:43.619" endtime="20231009 18:23:43.684"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Scroll Element With Offset" library="1.Keyword">
+<arg>${locator}</arg>
+<arg>${offsetX}</arg>
+<arg>${offsetY}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>window.scrollBy(0, ${offsetY});</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:43.685" level="INFO">${js_code} = var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingC...</msg>
+<status status="PASS" starttime="20231009 18:23:43.685" endtime="20231009 18:23:43.685"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:43.686" level="INFO">Executing JavaScript:
+var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+window.scrollBy(0, 300);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:43.685" endtime="20231009 18:23:43.695"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:43.684" endtime="20231009 18:23:43.695"/>
+</kw>
+<kw name="Is Element In Viewport" library="1.Keyword">
+<var>${is_visible}</var>
+<arg>${locator}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:43.697" level="INFO">${js_code} = var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingC...</msg>
+<status status="PASS" starttime="20231009 18:23:43.697" endtime="20231009 18:23:43.697"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${is_visible}</var>
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:43.697" level="INFO">Executing JavaScript:
+var elem = document.evaluate('(//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:43.705" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20231009 18:23:43.697" endtime="20231009 18:23:43.705"/>
+</kw>
+<msg timestamp="20231009 18:23:43.705" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20231009 18:23:43.695" endtime="20231009 18:23:43.705"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${is_visible}'=='True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231009 18:23:43.706" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231009 18:23:43.706" endtime="20231009 18:23:43.706"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:43.684" endtime="20231009 18:23:43.706"/>
+</iter>
+<status status="PASS" starttime="20231009 18:23:43.619" endtime="20231009 18:23:43.706"/>
+</for>
+<status status="PASS" starttime="20231009 18:23:43.619" endtime="20231009 18:23:43.706"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:23:53.722" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231009 18:23:43.706" endtime="20231009 18:23:53.722"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${elementXpath}</var>
+<arg>(//*[@type="button"])[24]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231009 18:23:53.723" level="INFO">${elementXpath} = (//*[@type="button"])[24]</msg>
+<status status="PASS" starttime="20231009 18:23:53.723" endtime="20231009 18:23:53.723"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elementXpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:53.723" endtime="20231009 18:23:53.743"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//*[@type='button'])[24]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.focus()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:53.743" level="INFO">Executing JavaScript:
+document.evaluate("(//*[@type='button'])[24]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.focus()
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:53.743" endtime="20231009 18:23:53.750"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elementXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:53.753" level="INFO">Clicking element '(//*[@type="button"])[24]'.</msg>
+<status status="PASS" starttime="20231009 18:23:53.750" endtime="20231009 18:23:53.902"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://span[@title='รองผู้จัดการใหญ่']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231009 18:23:53.902" endtime="20231009 18:23:53.936"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://span[@title='รองผู้จัดการใหญ่']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:53.937" level="INFO">Clicking element 'xpath://span[@title='รองผู้จัดการใหญ่']'.</msg>
+<status status="PASS" starttime="20231009 18:23:53.936" endtime="20231009 18:23:54.026"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>//*[@class="slds-button slds-button_brand" and text()="Save"]</arg>
+<arg>0</arg>
+<arg>300</arg>
+<arg>5</arg>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${attempts}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Scroll Element With Offset" library="1.Keyword">
+<arg>${locator}</arg>
+<arg>${offsetX}</arg>
+<arg>${offsetY}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>window.scrollBy(0, ${offsetY});</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:54.028" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingCli...</msg>
+<status status="PASS" starttime="20231009 18:23:54.028" endtime="20231009 18:23:54.028"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:54.029" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+window.scrollBy(0, 300);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:54.028" endtime="20231009 18:23:54.041"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:54.027" endtime="20231009 18:23:54.041"/>
+</kw>
+<kw name="Is Element In Viewport" library="1.Keyword">
+<var>${is_visible}</var>
+<arg>${locator}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:54.042" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingCli...</msg>
+<status status="PASS" starttime="20231009 18:23:54.042" endtime="20231009 18:23:54.042"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${is_visible}</var>
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:54.044" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:54.058" level="INFO">${is_visible} = False</msg>
+<status status="PASS" starttime="20231009 18:23:54.043" endtime="20231009 18:23:54.058"/>
+</kw>
+<msg timestamp="20231009 18:23:54.058" level="INFO">${is_visible} = False</msg>
+<status status="PASS" starttime="20231009 18:23:54.041" endtime="20231009 18:23:54.058"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${is_visible}'=='True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20231009 18:23:54.058" endtime="20231009 18:23:54.059"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:54.027" endtime="20231009 18:23:54.059"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Scroll Element With Offset" library="1.Keyword">
+<arg>${locator}</arg>
+<arg>${offsetX}</arg>
+<arg>${offsetY}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>window.scrollBy(0, ${offsetY});</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:54.061" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingCli...</msg>
+<status status="PASS" starttime="20231009 18:23:54.060" endtime="20231009 18:23:54.061"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:54.062" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+window.scrollBy(0, 300);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:54.061" endtime="20231009 18:23:54.076"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:54.059" endtime="20231009 18:23:54.076"/>
+</kw>
+<kw name="Is Element In Viewport" library="1.Keyword">
+<var>${is_visible}</var>
+<arg>${locator}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:54.077" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingCli...</msg>
+<status status="PASS" starttime="20231009 18:23:54.077" endtime="20231009 18:23:54.077"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${is_visible}</var>
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:54.079" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:54.092" level="INFO">${is_visible} = False</msg>
+<status status="PASS" starttime="20231009 18:23:54.077" endtime="20231009 18:23:54.092"/>
+</kw>
+<msg timestamp="20231009 18:23:54.092" level="INFO">${is_visible} = False</msg>
+<status status="PASS" starttime="20231009 18:23:54.076" endtime="20231009 18:23:54.092"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${is_visible}'=='True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20231009 18:23:54.092" endtime="20231009 18:23:54.092"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:54.059" endtime="20231009 18:23:54.092"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Scroll Element With Offset" library="1.Keyword">
+<arg>${locator}</arg>
+<arg>${offsetX}</arg>
+<arg>${offsetY}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>window.scrollBy(0, ${offsetY});</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:54.093" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingCli...</msg>
+<status status="PASS" starttime="20231009 18:23:54.093" endtime="20231009 18:23:54.093"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:54.094" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+window.scrollBy(0, 300);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231009 18:23:54.094" endtime="20231009 18:23:54.107"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:54.093" endtime="20231009 18:23:54.107"/>
+</kw>
+<kw name="Is Element In Viewport" library="1.Keyword">
+<var>${is_visible}</var>
+<arg>${locator}</arg>
+<kw name="Catenate" library="BuiltIn">
+<var>${js_code}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>var elem = document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>var rect = elem.getBoundingClientRect();</arg>
+<arg>return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20231009 18:23:54.108" level="INFO">${js_code} = var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingCli...</msg>
+<status status="PASS" starttime="20231009 18:23:54.108" endtime="20231009 18:23:54.108"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${is_visible}</var>
+<arg>${js_code}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231009 18:23:54.110" level="INFO">Executing JavaScript:
+var elem = document.evaluate('//*[@class="slds-button slds-button_brand" and text()="Save"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+var rect = elem.getBoundingClientRect();
+return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.bottom &lt;= (window.innerHeight || document.documentElement.clientHeight) &amp;&amp; rect.right &lt;= (window.innerWidth || document.documentElement.clientWidth));
+Without any arguments.</msg>
+<msg timestamp="20231009 18:23:54.122" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20231009 18:23:54.108" endtime="20231009 18:23:54.122"/>
+</kw>
+<msg timestamp="20231009 18:23:54.122" level="INFO">${is_visible} = True</msg>
+<status status="PASS" starttime="20231009 18:23:54.107" endtime="20231009 18:23:54.122"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${is_visible}'=='True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231009 18:23:54.122" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231009 18:23:54.122" endtime="20231009 18:23:54.122"/>
+</kw>
+<status status="PASS" starttime="20231009 18:23:54.093" endtime="20231009 18:23:54.123"/>
+</iter>
+<status status="PASS" starttime="20231009 18:23:54.027" endtime="20231009 18:23:54.123"/>
+</for>
+<status status="PASS" starttime="20231009 18:23:54.026" endtime="20231009 18:23:54.123"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@class="slds-button slds-button_brand" and text()="Save"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:23:54.123" level="INFO">Clicking element '//*[@class="slds-button slds-button_brand" and text()="Save"]'.</msg>
+<status status="PASS" starttime="20231009 18:23:54.123" endtime="20231009 18:23:54.236"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231009 18:24:04.252" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231009 18:23:54.236" endtime="20231009 18:24:04.252"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="Debt Info__item" and text()="Debt Info"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 18:24:04.253" level="INFO">Clicking element '//*[@id="Debt Info__item" and text()="Debt Info"]'.</msg>
+<msg timestamp="20231009 18:24:05.476" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../6.Test%20Results/Test%20Result001/selenium-screenshot-10.png"&gt;&lt;img src="../../6.Test%20Results/Test%20Result001/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231009 18:24:05.478" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="slds-tabs_default__link" data-tab-value="..." data-label="Debt Info" role="tab" href="javascript:void(0)" tabindex="-1" aria-selected="false" id="Debt Info__item" aria-controls="tab-12"&gt;Debt Info&lt;/a&gt; is not clickable at point (306, 20). Other element would receive the click: &lt;span data-aura-rendered-by="7:170;a"&gt;...&lt;/span&gt;
+  (Session info: chrome=117.0.5938.150)
+Stacktrace:
+	GetHandleVerifier [0x007BCFE3+45267]
+	(No symbol) [0x00749741]
+	(No symbol) [0x0063BE1D]
+	(No symbol) [0x00673B81]
+	(No symbol) [0x0067267F]
+	(No symbol) [0x00670C6B]
+	(No symbol) [0x00670005]
+	(No symbol) [0x0066855A]
+	(No symbol) [0x0068B03C]
+	(No symbol) [0x00667F96]
+	(No symbol) [0x0068B2B4]
+	(No symbol) [0x0069DDDA]
+	(No symbol) [0x0068AE36]
+	(No symbol) [0x0066674E]
+	(No symbol) [0x006678ED]
+	GetHandleVerifier [0x00A75659+2897737]
+	GetHandleVerifier [0x00ABE78B+3197051]
+	GetHandleVerifier [0x00AB8571+3171937]
+	GetHandleVerifier [0x00845E40+606000]
+	(No symbol) [0x0075338C]
+	(No symbol) [0x0074F508]
+	(No symbol) [0x0074F62F]
+	(No symbol) [0x00741D27]
+	BaseThreadInitThunk [0x75FC7BA9+25]
+	RtlInitializeExceptionChain [0x77E6BC5B+107]
+	RtlClearBits [0x77E6BBDF+191]
+</msg>
+<status status="FAIL" starttime="20231009 18:24:04.252" endtime="20231009 18:24:05.481"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="Debt Info__item" and text()="Debt Info"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.481" endtime="20231009 18:24:05.481"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.481" endtime="20231009 18:24:05.481"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>(//*[@class="slds-input"])[19]</arg>
+<arg>0</arg>
+<arg>300</arg>
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231009 18:24:05.481" endtime="20231009 18:24:05.482"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[19]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.482" endtime="20231009 18:24:05.482"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[19]</arg>
+<arg>0</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.482" endtime="20231009 18:24:05.482"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.482" endtime="20231009 18:24:05.482"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@title="Add Row" and text()="Add"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.482" endtime="20231009 18:24:05.482"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>//*[@class="slds-button slds-button_brand" and text()="Save"]</arg>
+<arg>0</arg>
+<arg>700</arg>
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231009 18:24:05.482" endtime="20231009 18:24:05.483"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>(//*[@class="slds-button slds-button_brand" and text()="Save"])[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.483" endtime="20231009 18:24:05.483"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//*[@class="slds-button slds-button_brand" and text()="Save"])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.483" endtime="20231009 18:24:05.483"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.483" endtime="20231009 18:24:05.483"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, 0);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.483" endtime="20231009 18:24:05.484"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="slds-tabs_default__link" and text()="Financial Info"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.484" endtime="20231009 18:24:05.484"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@name="SALARY" and text()="เงินเดือน"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.484" endtime="20231009 18:24:05.484"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>(//*[@class="slds-input"])[27]</arg>
+<arg>0</arg>
+<arg>300</arg>
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231009 18:24:05.484" endtime="20231009 18:24:05.484"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[27]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.484" endtime="20231009 18:24:05.484"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[29]</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.485" endtime="20231009 18:24:05.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[31]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.485" endtime="20231009 18:24:05.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[33]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.485" endtime="20231009 18:24:05.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[35]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.485" endtime="20231009 18:24:05.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[37]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.485" endtime="20231009 18:24:05.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[39]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.486" endtime="20231009 18:24:05.486"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>(//*[@class="slds-input"])[41]</arg>
+<arg>${Saraly}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.486" endtime="20231009 18:24:05.486"/>
+</kw>
+<kw name="Scroll Element With Offset Until Visible" library="1.Keyword">
+<arg>//*[@class="slds-form-element__label" and text()="Match "]</arg>
+<arg>0</arg>
+<arg>500</arg>
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231009 18:24:05.486" endtime="20231009 18:24:05.486"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="slds-form-element__label" and text()="Match "]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.486" endtime="20231009 18:24:05.486"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@value="Save" and text()="Save"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.486" endtime="20231009 18:24:05.486"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@value="Save" and text()="Save"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.486" endtime="20231009 18:24:05.487"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.487" endtime="20231009 18:24:05.487"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@value="Submit" and text()="Submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.487" endtime="20231009 18:24:05.487"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.487" endtime="20231009 18:24:05.487"/>
+</kw>
+<status status="FAIL" starttime="20231009 18:22:36.512" endtime="20231009 18:24:05.487"/>
+</iter>
+<status status="FAIL" starttime="20231009 18:22:36.512" endtime="20231009 18:24:05.487"/>
+</for>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="NOT RUN" starttime="20231009 18:24:05.488" endtime="20231009 18:24:05.488"/>
+</kw>
+<status status="FAIL" starttime="20231009 18:22:36.511" endtime="20231009 18:24:05.488">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="slds-tabs_default__link" data-tab-value="..." data-label="Debt Info" role="tab" href="javascript:void(0)" tabindex="-1" aria-selected="false" id="Debt Info__item" aria-controls="tab-12"&gt;Debt Info&lt;/a&gt; is not clickable at point (306, 20). Other element would receive the click: &lt;span data-aura-rendered-by="7:170;a"&gt;...&lt;/span&gt;
+  (Session info: chrome=117.0.5938.150)
+Stacktrace:
+	GetHandleVerifier [0x007BCFE3+45267]
+	(No symbol) [0x00749741]
+	(No symbol) [0x0063BE1D]
+	(No symbol) [0x00673B81]
+	(No symbol) [0x0067267F]
+	(No symbol) [0x00670C6B]
+	(No symbol) [0x00670005]
+	(No symbol) [0x0066855A]
+	(No symbol) [0x0068B03C]
+	(No symbol) [0x00667F96]
+	(No symbol) [0x0068B2B4]
+	(No symbol) [0x0069DDDA]
+	(No symbol) [0x0068AE36]
+	(No symbol) [0x0066674E]
+	(No symbol) [0x006678ED]
+	GetHandleVerifier [0x00A75659+2897737]
+	GetHandleVerifier [0x00ABE78B+3197051]
+	GetHandleVerifier [0x00AB8571+3171937]
+	GetHandleVerifier [0x00845E40+606000]
+	(No symbol) [0x0075338C]
+	(No symbol) [0x0074F508]
+	(No symbol) [0x0074F62F]
+	(No symbol) [0x00741D27]
+	BaseThreadInitThunk [0x75FC7BA9+25]
+	RtlInitializeExceptionChain [0x77E6BC5B+107]
+	RtlClearBits [0x77E6BBDF+191]
+</status>
+</test>
+<status status="FAIL" starttime="20231009 18:22:35.564" endtime="20231009 18:24:05.494"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="2.Pending-IncomeMaker">2.Pending-IncomeMaker</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

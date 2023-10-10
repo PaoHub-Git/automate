@@ -1,0 +1,50 @@
+1692883673354	geckodriver	INFO	Listening on 127.0.0.1:64453
+1692883678842	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64454" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofilewNVshN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1692883679287	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1692883679393	Marionette	INFO	Listening on port 64465
+Read port: 64465
+WebDriver BiDi listening on ws://127.0.0.1:64454
+1692883679447	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64454/devtools/browser/3c79be7c-76e2-4ef4-a41a-b80c784b49fc
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--sit2.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--sit2.sandbox.my.salesforce.com."
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+JavaScript warning: https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 273 > eval, line 1: Script terminated by timeout at:
+_matchFieldTypes@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:20903
+i@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:20757
+_validateFields@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:20849
+validate@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:20503
+_checkInputs@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:33202
+_logInternal@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:28248
+log/<@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:28143
+tryCatch@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/shared.js:1:4656
+log@https://cardxscb--sit2.sandbox.lightning.force.com/components/o11y/client.js:1:27833
+navFromPage@https://cardxscb--sit2.sandbox.lightning.force.com/components/instrumentation/o11ySupport.js:1:7518
+notify/<@https://cardxscb--sit2.sandbox.lightning.force.com/components/instrumentation/utility.js:1:4399
+notify@https://cardxscb--sit2.sandbox.lightning.force.com/components/instrumentation/utility.js:1:4386
+navFromPage@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:19:369
+onWindowClose@https://cardxscb--sit2.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:243
+b@https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+t@https://static.lightning.force.com/cs74/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:1:14359
+
+1692884449727	Marionette	INFO	Stopped listening on port 64465
+Dynamically enable window occlusion 1
+!!! error running onStopped callback: TypeError: callback is not a function
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443
+[Parent 32040, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:621
+[GPU 24308, IPC I/O Child] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:443

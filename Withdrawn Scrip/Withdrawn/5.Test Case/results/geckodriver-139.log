@@ -1,0 +1,20 @@
+1693995337599	geckodriver	INFO	Listening on 127.0.0.1:61594
+1693995343435	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61595" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofileeLQMLe"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693995343723	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693995343774	Marionette	INFO	Listening on port 61610
+WebDriver BiDi listening on ws://127.0.0.1:61595
+Read port: 61610
+1693995343988	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:61595/devtools/browser/d7e42b66-e2cb-454c-8ac9-90ef226b4cbf
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+1693995370895	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1693995371101	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1693995371927	Marionette	INFO	Stopped listening on port 61610
+Dynamically enable window occlusion 1

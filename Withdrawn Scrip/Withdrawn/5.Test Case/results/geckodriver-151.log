@@ -1,0 +1,33 @@
+1693997404214	geckodriver	INFO	Listening on 127.0.0.1:51209
+1693997410451	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51210" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofilecMlrcg"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693997410792	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693997410856	Marionette	INFO	Listening on port 51226
+WebDriver BiDi listening on ws://127.0.0.1:51210
+Read port: 51226
+1693997411104	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51210/devtools/browser/4093c84e-74b0-45eb-89e0-838801fc7a20
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+1693997441532	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1693997441744	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1693997449045	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:429:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:178:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cdx-uat2-npci-los-loandoc.s3.ap-southeast-1.amazonaws.com."
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofilecMlrcg\thumbnails) because it does not exist
+JavaScript warning: resource://pdf.js/web/viewer.js, line 6222: Script terminated by timeout at:
+_updateInternalState@resource://pdf.js/web/viewer.js:6222:3
+_pushOrReplaceState@resource://pdf.js/web/viewer.js:6136:10
+_tryPushCurrentPosition@resource://pdf.js/web/viewer.js:6164:12
+_pageHide@resource://pdf.js/web/viewer.js:6317:12
+
+1693997737527	Marionette	INFO	Stopped listening on port 51226
+Dynamically enable window occlusion 1

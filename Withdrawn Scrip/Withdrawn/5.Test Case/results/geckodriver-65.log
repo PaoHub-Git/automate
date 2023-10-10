@@ -1,0 +1,31 @@
+1693552106576	geckodriver	INFO	Listening on 127.0.0.1:50620
+1693552112059	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50621" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofileor6QGo"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693552112749	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693552112791	Marionette	INFO	Listening on port 50634
+WebDriver BiDi listening on ws://127.0.0.1:50621
+Read port: 50634
+1693552112949	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:50621/devtools/browser/b7377397-9017-442b-a0e0-62b29f840205
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--sit2.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--sit2.sandbox.my.salesforce.com."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofileor6QGo\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofileor6QGo\thumbnails) because it does not exist
+JavaScript warning: moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js, line 12: Script terminated by timeout at:
+l@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:12:2924
+extractEvents@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:12:5036
+extractEvents@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:12:19692
+handleTopLevel@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:14:5568
+i@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:14:6034
+perform@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:15:8977
+batchedUpdates@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:14:3760
+i@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:14:22836
+dispatchEvent@moz-extension://08b4d3cb-43b6-45b6-ae05-cac2fc4fc5b8/react-dom.min.js:14:6899
+
+1693557054027	Marionette	INFO	Stopped listening on port 50634
+Dynamically enable window occlusion 1

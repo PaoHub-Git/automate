@@ -1,0 +1,122 @@
+1694010085543	geckodriver	INFO	Listening on 127.0.0.1:64572
+1694010092640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64573" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofilewmkD5J"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694010093025	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1694010093077	Marionette	INFO	Listening on port 64582
+WebDriver BiDi listening on ws://127.0.0.1:64573
+Read port: 64582
+1694010093218	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64573/devtools/browser/397bf8c1-4517-4c0a-8c81-7e37a40c04cc
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+1694010124293	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1694010124505	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1694010130141	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:429:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:178:31
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cdx-uat2-npci-los-loandoc.s3.ap-southeast-1.amazonaws.com."
+JavaScript warning: resource://pdf.js/web/viewer.js, line 6222: Script terminated by timeout at:
+_updateInternalState@resource://pdf.js/web/viewer.js:6222:3
+_pushOrReplaceState@resource://pdf.js/web/viewer.js:6136:10
+_tryPushCurrentPosition@resource://pdf.js/web/viewer.js:6164:12
+_pageHide@resource://pdf.js/web/viewer.js:6317:12
+
+console.warn: LoginHelper(Main): "Couldn't parse specified uri [System Principal] with error NS_ERROR_MALFORMED_URI"
+console.warn: LoginHelper(Main): "Couldn't parse specified uri [System Principal] with error NS_ERROR_MALFORMED_URI"
+console.warn: LoginHelper(Main): "Couldn't parse specified uri [System Principal] with error NS_ERROR_MALFORMED_URI"
+console.error: (new TypeError("currentNode is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 66))
+TypeError: currentNode is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:66:20
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:309:10
+
+console.error: "Unable to find target with innerWindowId:10737418261"
+console.error: "Unable to find target with innerWindowId:10737418261"
+console.error: "Unable to find target with innerWindowId:10737418261"
+console.error: "Unable to find target with innerWindowId:10737418261"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Async method failed in safeAsyncMethod" (new Error("Connection closed, pending request to server0.conn0.windowGlobal10737418268/layout21, type getGrids failed\n\nRequest stack:\nrequest@resource://devtools/shared/protocol/Front.js:300:14\ngenerateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:47:19\ngetAllGrids@resource://devtools/client/fronts/layout.js:173:17\nexports.safeAsyncMethod/<@resource://devtools/shared/async-utils.js:61:25\ngetGrids@resource://devtools/client/inspector/grids/grid-inspector.js:450:35\n", "resource://devtools/shared/protocol/Front.js", 106))
+console.error: "stylesheets: fetch failed for https://cardxscb--uat.sandbox.lightning.force.com/resource/1692088382000/customer360css, using system principal instead."
+JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Windows\TEMP\rust_mozprofilewmkD5J\bookmarkbackups\bookmarks-2023-09-06_11_hPOxlCmJ9IcHhB5MkE5yqA==.jsonlz4) because it does not exist
+JavaScript error: https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 60 > Function line 8 > eval, line 1: TypeError: t.constructedDocListApplication is undefined
+console.warn: "Listener for event 'frame' did not return a promise."
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Windows\TEMP\rust_mozprofilewmkD5J\thumbnails) because it does not exist
+JavaScript warning: https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 273 > eval, line 8: Script terminated by timeout at:
+o@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:1731
+[36]</t.exports@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:56793
+[31]</b.prototype.setup@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:47586
+[31]</b.prototype.verify@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:48266
+validate@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:63017
+encode@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:63126
+encodePayload@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:63339
+processRawLogMessage@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:63877
+l/</<@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64278
+l/<@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64269
+l@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64228
+c@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64520
+r@https://cardxscb--uat.sandbox.lightning.force.com/components/instrumentation/o11ySecondaryLoaderWithImports.js:1:350
+getEncodedO11yLogs@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:10:64
+sendBeacon/<@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:14:236
+initializeBeacon/this.preservedAuraCallback<@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:3:255
+b@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+sendBeacon@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:409
+onWindowClose@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:362
+b@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+t@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:1:14359
+EventListener.handleEvent*value@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:10:9312
+initializeBeacon@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:4:399
+init@https://cardxscb--uat.sandbox.lightning.force.com/components/instrumentation/beacon.js:4:14
+K.prototype.Zc@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:576:177
+c@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:438:249
+dG@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:558:282
+O.prototype.X/<@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:559:103
+C.Ua@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:933:221
+O.prototype.X@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:559:80
+G.prototype.X@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:422:490
+G@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:395:372
+a@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:370:353
+W.prototype.zb@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:763:501
+C.ae@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:433:215
+G@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:394:78
+a@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:370:353
+W.prototype.zb@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:763:501
+G@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:395:93
+a@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:370:353
+W.prototype.zb@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:763:501
+U.prototype.pg@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:667:248
+pJ@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:920:87
+d/</<@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:916:542
+C.Ua@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:933:221
+d/<@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:916:526
+promise callback*d@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:916:506
+promise callback*C.Pq/$A.yb</<@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:917:492
+promise callback*C.Pq/$A.yb<@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:917:336
+I/<@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:212:368
+KF@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:535:371
+I.prototype.Sq@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:213:243
+I@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:212:239
+C.Pq@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:916:427
+initFramework@https://cardxscb--uat.sandbox.lightning.force.com/lightning/r/LOS_Loan_Application__c/a1I1y000002APSWEA4/view:179:7
+setTimeout handler*@https://cardxscb--uat.sandbox.lightning.force.com/lightning/r/LOS_Loan_Application__c/a1I1y000002APSWEA4/view:200:11
+@https://cardxscb--uat.sandbox.lightning.force.com/lightning/r/LOS_Loan_Application__c/a1I1y000002APSWEA4/view:664:2
+
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1694055269985	Marionette	INFO	Stopped listening on port 64582
+Dynamically enable window occlusion 1

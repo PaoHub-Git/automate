@@ -1,0 +1,38 @@
+1694076716731	geckodriver	INFO	Listening on 127.0.0.1:60619
+1694076723096	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60620" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofileDh2SP5"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694076723400	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1694076723451	Marionette	INFO	Listening on port 60633
+WebDriver BiDi listening on ws://127.0.0.1:60620
+Read port: 60633
+1694076723663	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:60620/devtools/browser/941738c6-498f-40d7-aad1-76b6a2fb80fb
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+1694076751573	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1694076751736	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: uncaught exception: Object
+1694076758264	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:429:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:178:31
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 60 > Function line 8 > eval, line 1: TypeError: this.draftValues[0] is undefined
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript warning: https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js, line 877: Script terminated by timeout at:
+Y.prototype.Lg@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:877:426
+Y.prototype.transaction@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:874:105
+logBandwidthUsageTransaction@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:26:234
+logBandwidthUsage@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:25:443
+onWindowClose@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:298
+b@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+t@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:1:14359
+
+1694076901104	Marionette	INFO	Stopped listening on port 60633
+Dynamically enable window occlusion 1

@@ -1,0 +1,49 @@
+1693994507332	geckodriver	INFO	Listening on 127.0.0.1:59285
+1693994513466	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59286" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Windows\\TEMP\\rust_mozprofile2Du03D"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1693994513769	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1693994513823	Marionette	INFO	Listening on port 59297
+WebDriver BiDi listening on ws://127.0.0.1:59286
+Read port: 59297
+1693994514059	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59286/devtools/browser/df8a41bd-cd2c-43af-bdf9-eb1fac92c418
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://cardxscb--uat.sandbox.my.salesforce.com."
+console.warn: LoginHelper(Main): "Couldn't parse specified uri [System Principal] with error NS_ERROR_MALFORMED_URI"
+console.warn: LoginHelper(Main): "Couldn't parse specified uri [System Principal] with error NS_ERROR_MALFORMED_URI"
+console.warn: LoginHelper(Main): "Couldn't parse specified uri [System Principal] with error NS_ERROR_MALFORMED_URI"
+JavaScript warning: https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js line 273 > eval, line 8: Script terminated by timeout at:
+[31]</b.prototype.isReservedName@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:47245
+[31]</b.prototype.add@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:46398
+[31]</b.fromJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:44787
+[21]</c.prototype.addJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:26515
+[21]</c.fromJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:25874
+[21]</c.prototype.addJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:26515
+[21]</c.fromJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:25874
+[21]</c.prototype.addJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:26515
+[26]</c.fromJSON@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:37423
+getSchemaType@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:62814
+validate@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:62990
+encode@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:63126
+processRawLogMessage@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:63943
+l/</<@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64278
+l/<@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64269
+l@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64228
+c@https://cardxscb--uat.sandbox.lightning.force.com/components/o11y/collectors.js:8:64520
+r@https://cardxscb--uat.sandbox.lightning.force.com/components/instrumentation/o11ySecondaryLoaderWithImports.js:1:350
+getEncodedO11yLogs@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:10:64
+sendBeacon/<@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:14:236
+initializeBeacon/this.preservedAuraCallback<@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:3:255
+b@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+sendBeacon@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:409
+onWindowClose@https://cardxscb--uat.sandbox.lightning.force.com/libraries/instrumentation/beaconLib.BeaconLibrary.js:13:362
+b@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:929:72
+t@https://static.lightning.force.com/cs114/auraFW/javascript/MlRqRU5YT3pjWFRNenJranFOMWFjQXlMaWFpdmxPSTZWeEo0bWtiN0hsaXcyNDQuMjAuNC0yLjQxLjQ/aura_prod.js:1:14359
+
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1693994957245	Marionette	INFO	Stopped listening on port 59297
+Dynamically enable window occlusion 1
