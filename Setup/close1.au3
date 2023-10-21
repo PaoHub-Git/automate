@@ -1,1 +1,0 @@
-ControlClick("[CLASS:#32770]", "", "[CLASS:Button; TEXT:Cancel]")

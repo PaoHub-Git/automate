@@ -10,7 +10,7 @@ ${Next_Workstation__c}    Dummy System Workstation
 ${Previous_WorkStation__c}    Dummy System Workstation
 ${Loan_Application_Status__c}    Resolved-Withdrawn
 
-${Ref no}    								BT2023102100006
+${Ref no}    								BT2023102100007
 
 
 
