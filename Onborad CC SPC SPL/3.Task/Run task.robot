@@ -32,19 +32,12 @@ ${Company name}         Nospital
 ${Sales code 1}         e20566
 ${Sales code 1_uat}     VB001
 
-###
 
 
-#หน้าเลือก Produck
-
-
-*** Variables ***
-${FILE_PATH}    C:\\Users\\Alonggorn Panthong\\Documents\\DATA_ONBORAD (1).xlsx            ##กำหนด PATH ไฟลที่จะดึงข้อมูลมาใช้งาน
-${MAX_ROW}    7           ##กำหนดให้ค่ามากกว่าข้อมูลในไฟล์ EXCEL มากกว่า 1 เสมอ เช่น ในข้อมูลมี 5 แถว ให้กำหนดเปน 6
+${FILE_PATH}    C:\\Users\\Alonggorn Panthong\\Documents\\DATA_ONBORAD (1).xlsx   ##กำหนด PATH ไฟลที่จะดึงข้อมูลมาใช้งาน
+${MAX_ROW}    16           ##กำหนดให้ค่ามากกว่าข้อมูลในไฟล์ EXCEL มากกว่า 1 เสมอ เช่น ในข้อมูลมี 5 แถว ให้กำหนดเปน 6
 ${CONTINUE_LOOP}  CONTINUE
 ${EMPTY}    ""
-
-
 
 
 #######################################################
@@ -61,8 +54,8 @@ ${SELECTED_CARD}    SPL  #เลือกประเภทบัตร
 #${Product}    //*[text()="CardX XTRA PLATINUM"]                  ### Master card_uat ###
 #${Product}    //*[text()="CardX XTRA PLATINUM "]                   ### Visa Card_uat ###
 #${Product}    //*[text()="CardX SPEEDY CASH"]                      ### CardX SPEEDY CASH UAT ###
-#${Product}    //*[text()="CardX SPEEDY LOAN"]                      ### CardX SPEEDY LOAN UAT ###
-${Product}      //*[text="CardX SPEEDY LOAN BALANCE TRANSFER"]      ### CardX SPEEDY LOAN BALANCE TRANSFER ###
+${Product}    //*[text()="CardX SPEEDY LOAN"]                      ### CardX SPEEDY LOAN UAT ###
+#${Product}      //*[text()="CardX SPEEDY LOAN BALANCE TRANSFER"]      ### CardX SPEEDY LOAN BALANCE TRANSFER ###
 
 ########################################################
 ###CardX SPEEDY LOAN###
@@ -83,9 +76,56 @@ ${Saving Account}    (//div[div[text()="Saving Account"])[1]
 ### Account number SPL ###
 ${account number scb}    1113909131
 
+### Reference Loan Account ###
+
+##Loan Issuer
+# ${Loan Issuer}    CITI CONSUMER PRODUCTS (THAILAND) COMPANY LIMITED
+# ${Loan Issuer}    American Express
+# ${Loan Issuer}    AEON Thana Sinsap (Thailand) Public Company Limited
+# ${Loan Issuer}    General Card Services Company Limited
+# ${Loan Issuer}    Ayudhya Capital Services Co.,Ltd.
+# ${Loan Issuer}    Tesco Lotus Money Services Limited
+# ${Loan Issuer}    Promise (Thailand) Co., Ltd.
+# ${Loan Issuer}    CITICORP LEASING (THAILAND) COMPANY LIMITED.
+# ${Loan Issuer}    Summit Capital Leasing Company Limited
+# ${Loan Issuer}    BANGKOK BANK PUBLIC COMPANY LIMITED
+${Loan Issuer}    KASIKORNBANK PUBLIC. COMPANY LIMITED
+${Loan Issuer3}    Krung Thai Bank Public Company Limited
+# ${Loan Issuer}    TMBThanachart Bank Public Company Limited
+${Loan Issuer2}    CITI BANK N.A.
+# ${Loan Issuer}    STANDARD CHARTERED BANK
+# ${Loan Issuer}    CIMB Thai Bank Public Company Limited
+# ${Loan Issuer}    United Overseas Bank (Thai) Public Company Limited
+# ${Loan Issuer}    Bank of Ayudhya Public Company Limited
+# ${Loan Issuer}    The Government Savings Bank
+# ${Loan Issuer}    Bank of China
+# ${Loan Issuer}    ISLAMIC BANK
+# ${Loan Issuer}    KIATNAKIN BANK
+# ${Loan Issuer}    Industrial and Commercial Bank of China Limited
+# ${Loan Issuer}    THAI CREDIT RETAIL BANK
+# ${Loan Issuer}    JFintech CO.,LTD.
+
+
+##Type of Loan
+
+#${Type of Loan}    //*[text()="Revolving Cash Card"]
+${Type of Loan}    //*[text()="Credit Card"]
+#${Type of Loan}     //*[text()="Personal Loan"]
+
+##Bill Date
+
+${Bill Date}    01/11/2023
+${Original Credit Limit/Loan Amount}    50000
+${Payoff Amount}    20000
+
+## Account Order
+${Account Order}    3
+#${Loop Order}    1
+
 
 
 *** Tasks ***
+
 
 Onboarding And Get Names
 
@@ -205,8 +245,10 @@ Onboarding And Get Names
         Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_CC}'     Select income
 
         Wait Until Element Is Visible    //*[@id="income"]
+        Press Keys    //*[@id="income"]    CTRL+a+DELETE
         Input Text          id=income    ${Income_Excel}
-        Click Element       //*[text()="Calculate"] 
+        Click Element       //*[text()="Calculate"]
+        #Click Element    //*[text()="Confirm previous income"] 
         Click Element If Visible  //*[text()="No thanks, next"]
 
         Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_CC}'     Select Credit limit CC,SPC
@@ -215,15 +257,21 @@ Onboarding And Get Names
         ...    Run Keywords
         ...    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight / 2);
         ...    AND    Sleep    5s
-        ...    AND    Drag And Drop By Offset    //span[@class="MuiSlider-root jss631 MuiSlider-colorPrimary"]    50    0
+        ...    AND    Drag And Drop By Offset    //span[@class="MuiSlider-root jss632 MuiSlider-colorPrimary"]    50    0
         ...    AND    Click Element    //*[text()="${Select installment period (month)}"]
         ...    AND    Sleep    3s
         ...    AND    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
 
-
-
-        Wait Until Element Is Visible    locator=//*[text()="Next"]  
+        Wait Until Element Is Visible    locator=//*[text()="Next"] 
+        Sleep    1s 
         Click Element        //*[text()="Next"] 
+        Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
+
+		${status}=    Run Keyword And Return Status    Page Should Contain    Reference Loan Account
+		Run Keyword If    ${status}    Reference Loan SPL
+
+
+        
         Click Element        //*[text()="Confirm"] 
         Wait Until Element Is Visible    //*[text()="Current address"] 
         Scroll Element Into View    //*[text()="Current address"]    
@@ -240,8 +288,8 @@ Onboarding And Get Names
         Press Keys    //*[@name="emailAddressForStatement"]    CTRL+a+DELETE
         Input Text           //*[@name="emailAddressForStatement"]    ${Email_Excel}
         Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-        Click Element        //*[text()="Use address in National ID card"]
-        Click Element        //*[text()="Use address in the national ID card"]
+        Click Element        //*[text()="Use address as specified in National ID Card"]
+        Click Element        //*[text()="National ID Card"]
         Click Element        //*[text()="Next"] 
         #Sleep    8s
         Wait Until Element Is Visible    locator=//*[text()="skipOTP"]
@@ -269,26 +317,28 @@ Onboarding And Get Names
         Input Text    //*[@name="mobileNo"]    ${PhoneNumber}
     
         Click Element        //*[@placeholder="Input work address"]
-        Wait Until Element Is Visible    //*[text()="Use the address in the National ID card"]
+        Wait Until Element Is Visible    //*[text()="Use address as specified in National ID Card"]
         Sleep    3s
-        Click Element        //*[text()="Use the address in the National ID card"]
+        Click Element        //*[text()="Use address as specified in National ID Card"]
 
         Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
         Click Element        //*[text()="Save"]
-
-
+        
+        Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_CC}'     Click Element        //*[text()="Next"]
         Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_SPC}'    Add detail spc
         Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_SPL}'    Add detail spl
 
 
         #Sleep    10s
+        Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
+        Sleep    1s
         Wait Until Element Is Visible    //*[text()="Continue"] 
         Click Element        //*[text()="Continue"] 
         #Sleep    20s
         Wait Until Element Is Not Visible    //*[text()="Please wait"]
 
 
-        Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_CC}'    Click Element        //*[text()="Continue"] 
+        #Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_CC}'    Click Element        //*[text()="Continue"] 
         Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_SPL}'
         ...    Run Keywords
         ...    Wait Until Element Is Visible    //*[text()="SCB Account"]
@@ -337,7 +387,6 @@ Onboarding And Get Names
         Wait Until Element Is Visible    //*[text()="Submit document via Sale Tablet"]
         Click Element    //*[text()="Submit document via Sale Tablet"]
     
-
         #Upload
 
         Wait Until Element Is Visible    //*[text()="Upload"]
@@ -352,7 +401,7 @@ Onboarding And Get Names
         Sleep    5s
 
 		Click Element    //*[text()="Add photo"]
-        Sleep    3s
+        Sleep    2s
         Choose File   xpath=//*[@id="selectImage"]    D:\\test.jpg
         Sleep    3s
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
@@ -362,10 +411,35 @@ Onboarding And Get Names
         Wait Until Element Is Visible    locator=//*[text()="Done"]
         Sleep    3s
         Click Element    //*[text()="Done"]
-        #Sleep    10s
+        Sleep    10s
         Wait Until Element Is Not Visible    //*[text()="Please wait"]
         Sleep    4s
         Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+
+        Sleep    5s
+        ${status1}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@id="5"]//div[text()="Upload"]    1s
+        Run Keyword If    ${status1}
+        ...    Run Keywords
+        ...    Wait Until Element Is Visible    //*[@id="5"]//div[text()="Upload"]
+        ...    AND    Click Element    //*[@id="5"]//div[text()="Upload"]
+        ...    AND    Upload picture
+
+
+        ${status2}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@id="6"]//div[text()="Upload"]    1s
+        Run Keyword If    ${status2}
+        ...    Run Keywords
+        ...    Wait Until Element Is Visible    //*[@id="6"]//div[text()="Upload"]    5s
+        ...    AND    Click Element    //*[@id="6"]//div[text()="Upload"]
+        ...    AND    Upload picture
+
+
+        ${status3}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@id="7"]//div[text()="Upload"]    1s
+        Run Keyword If    ${status3}
+        ...    Run Keywords
+        ...    Wait Until Element Is Visible    //*[@id="7"]//div[text()="Upload"]
+        ...    AND    Click Element    //*[@id="7"]//div[text()="Upload"]
+        ...    AND    Upload picture
+
         Wait Until Element Is Visible    //*[text()="Submit document"]
         Click Element    //*[text()="Submit document"]
         Click Element    //*[text()="Confirm"]

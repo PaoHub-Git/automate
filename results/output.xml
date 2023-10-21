@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.0 on win32)" generated="20231018 15:30:52.386" rpa="false" schemaversion="4">
+<suite id="s1" name="Automate" source="D:\automate">
+<suite id="s1-s1" name="Onborad CC SPC SPL" source="D:\automate\Onborad CC SPC SPL">
+<suite id="s1-s1-s1" name="3.Task" source="D:\automate\Onborad CC SPC SPL\3.Task">
+<suite id="s1-s1-s1-s1" name="Test" source="D:\automate\Onborad CC SPC SPL\3.Task\test.robot">
+<test id="s1-s1-s1-s1-t1" name="Open Local HTML File" line="12">
+<kw name="Open Browser">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<msg timestamp="20231018 15:30:52.425" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20231018 15:30:52.425" endtime="20231018 15:30:52.425"/>
+</kw>
+<status status="FAIL" starttime="20231018 15:30:52.425" endtime="20231018 15:30:52.425">No keyword with name 'Open Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20231018 15:30:52.425" endtime="20231018 15:30:52.425"/>
+</suite>
+<status status="FAIL" starttime="20231018 15:30:52.423" endtime="20231018 15:30:52.441"/>
+</suite>
+<status status="FAIL" starttime="20231018 15:30:52.420" endtime="20231018 15:30:52.443"/>
+</suite>
+<status status="FAIL" starttime="20231018 15:30:52.400" endtime="20231018 15:30:52.444"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Automate">Automate</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Onborad CC SPC SPL">Automate.Onborad CC SPC SPL</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="3.Task">Automate.Onborad CC SPC SPL.3.Task</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Test">Automate.Onborad CC SPC SPL.3.Task.Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231018 15:30:52.425" level="ERROR">Error in file 'D:\automate\Onborad CC SPC SPL\3.Task\test.robot' on line 3: Resource file '..\1.SettingSetting.robot' does not exist.</msg>
+</errors>
+</robot>
