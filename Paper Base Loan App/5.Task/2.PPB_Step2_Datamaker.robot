@@ -9,7 +9,7 @@ Resource    ..//1.Setting/Setting.robot
 ${CARD_TYPE_CC}     CC
 ${CARD_TYPE_SPC}    SPC
 ${CARD_TYPE_SPL}    SPL
-${SELECTED_CARD}    SPL  #เลือกประเภทบัตร
+${SELECTED_CARD}    CC  #เลือกประเภทบัตร
 #######################################################
 
 *** Tasks ***
@@ -120,7 +120,7 @@ Open and login SF
             Log    ${random_moo}
             Input Text    locator=//*[@id="moo"]    text=${random_moo}
 
-            Click Element    locator=//*[@placeholder="Input address information."]
+            Click Element    locator=//*[@placeholder="Input sub-district, district, province, postal code"]
             Wait Until Element Is Visible    locator=//*[text()="BANGKOK"]
             Click Element    locator=//*[text()="BANGKOK"]
             Input Text       locator=//*[@placeholder="Search"]    text=DUSIT
@@ -136,8 +136,8 @@ Open and login SF
         Execute Javascript    window.scrollBy(0, window.innerHeight * 0.8);
         
         
-        #Click Element    locator=(//*[@type="checkbox"])[1]
-        Click Element    locator=//*[text()="Use address in the national ID card"]      ##เลือก Use address in the national ID card
+        #Click Element    locator=//*[text()="Use address as specified in National ID Card"]
+        Click Element    locator=//*[text()="National ID Card"]      ##เลือก Use address in the national ID card
         Sleep    3s
         
         #Click Element    (//*[@class="MuiIconButton-label"])[7]
@@ -185,13 +185,13 @@ Open and login SF
 
         ${building_a} =   Random Building Name      #สุ่มชื่ออาคาร#
         Log   ${building_a}
-        Input Text    locator=//*[@placeholder="Input building name"]    text=${building_a}
+        Input Text    locator=//*[@placeholder="Input building"]    text=${building_a}
 
         ${random_moo_2} =    Generate Random String    1    123456789          #สุ่มเลชหมู่บ้าน#
         Log    ${random_moo_2}
         Input Text    locator=//*[@name="moo"]    text=${random_moo_2}
 
-        Click Element    locator=//*[@placeholder="Input address information."]
+        Click Element    locator=//*[@placeholder="Input sub-district, district, province, postal code"]
         Wait Until Element Is Visible    locator=//*[text()="BANGKOK"]
         Click Element    locator=//*[text()="BANGKOK"]
         Input Text       locator=//*[@placeholder="Search"]    text=DUSIT
@@ -203,8 +203,8 @@ Open and login SF
         Click Element    locator=//*[text()="10300"]
         Scroll Element Into View    (//*[@class="MuiButton-label"])[3]
         Click Element    locator=(//*[@class="MuiButton-label"])[3]       #กด Save #      
-        Wait Until Element Is Visible    locator=//span[@class='MuiButton-label']/div[text()='Continue']
-        Click Element    locator=//span[@class='MuiButton-label']/div[text()='Continue']
+        Wait Until Element Is Visible    locator=//*[text()='Next']
+        Click Element    locator=//*[text()='Next']
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
         Sleep    3s
 

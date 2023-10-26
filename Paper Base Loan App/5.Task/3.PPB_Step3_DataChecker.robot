@@ -48,17 +48,17 @@ Open and login SF
         ...    AND    Click Element    (//span[@class='title slds-truncate' and text()='${Ref no_manaul} | Loan Application'])[1]    
         ...    AND    Sleep    4s
 
-        ${element1}=    Execute JavaScript    return document.evaluate('//*[@class="slds-button__icon slds-button__icon_hint"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-        Wait Until Element Is Visible    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
+        # ${element1}=    Execute JavaScript    return document.evaluate('//*[@class="slds-button__icon slds-button__icon_hint"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        # Wait Until Element Is Visible    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
 		
-        Click Element    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
-        Wait Until Element Is Visible    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Data Entry Checker AuthLevel30"]
-        Click Element    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Data Entry Checker AuthLevel30"]
-        Wait Until Element Is Visible    locator=//*[@value="change owner"]
-        Click Element    locator=//*[@value="change owner"]
+        # Click Element    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
+        # Wait Until Element Is Visible    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Data Entry Checker AuthLevel30"]
+        # Click Element    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Data Entry Checker AuthLevel30"]
+        # Wait Until Element Is Visible    locator=//*[@value="change owner"]
+        # Click Element    locator=//*[@value="change owner"]
 		
 		
-        Wait Until Element Is Not Visible    locator=//*[@value="change owner"]
+        # Wait Until Element Is Not Visible    locator=//*[@value="change owner"]
 
 ######
 
@@ -80,9 +80,9 @@ Open and login SF
         Wait Until Element Is Visible    //span[@class="MuiButton-label"]/div[text()="Confirm application"]
         Click Element    locator=//span[@class="MuiButton-label"]/div[text()="Confirm application"]
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
-        Sleep    2s
-
-        Page Should Contain    Successfully submitted
+        Sleep    4s
+        
+        Wait Until Page Contains    Successfully submitted
 
         Switch Window    MAIN
 

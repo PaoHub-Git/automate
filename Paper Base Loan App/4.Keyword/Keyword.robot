@@ -5,10 +5,10 @@ Resource    ..//1.Setting/Setting.robot
 
 
 *** Variables ***
-#${Product}      //*[text()="CardX XTRA PLATINUM "]                         ### VISA CARD ###
+${Product}      //*[text()="CardX XTRA PLATINUM "]                         ### VISA CARD ###
 #${Product}      //*[text()="CardX XTRA PLATINUM"]                          ### MASTER CARD ###
 #${Product}      //*[text()="CardX SPEEDY CASH"]                            ### CardX SPEEDY CASH ###
-${Product}       //*[text()="CardX SPEEDY LOAN"]                            ### CardX SPEEDY LOAN ###
+#${Product}       //*[text()="CardX SPEEDY LOAN"]                            ### CardX SPEEDY LOAN ###
 
 
 
@@ -523,7 +523,15 @@ Income Checker AuthLevel30
         Click Element    //*[@value="Submit" and text()="Submit"]
         Sleep    6s
         Close Browser
-      
+
+
+Reload app no.
+        Wait Until Element Is Visible    //*[@class="slds-combobox__input slds-input slds-combobox__input-value"]
+		Click Element    //*[@class="slds-combobox__input slds-input slds-combobox__input-value"]  # คลิกที่ dropdown
+        Wait Until Element Is Visible    //lightning-base-combobox-item[@data-value='FILTER:LOS_Loan_Application__c:Loan Applications']
+		Scroll Element Into View    //lightning-base-combobox-item[@data-value='FILTER:LOS_Loan_Application__c:Loan Applications']
+        Click Element    //lightning-base-combobox-item[@data-value='FILTER:LOS_Loan_Application__c:Loan Applications']
+
 
 
 Open and login2

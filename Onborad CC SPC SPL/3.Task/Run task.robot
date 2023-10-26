@@ -166,7 +166,8 @@ Onboarding And Get Names
 
 
 		Wait Until Element Is Visible  //*[text()='Apply']
-		Execute JavaScript    window.scrollBy(0, 300)   # เลื่อนลง 300px
+		#Execute JavaScript    window.scrollBy(0, 300)   # เลื่อนลง 300px
+        Scroll Element Into View    //*[text()='Apply']
 		#Sleep    5s
 		Wait Until Element Is Visible    locator=//*[text()='Apply']
 		Click Element                  //*[text()='Apply']

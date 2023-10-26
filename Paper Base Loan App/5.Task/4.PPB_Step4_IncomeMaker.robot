@@ -8,7 +8,7 @@ Resource    ..//1.Setting/Setting.robot
 ${CARD_TYPE_CC}     CC
 ${CARD_TYPE_SPC}    SPC
 ${CARD_TYPE_SPL}    SPL
-${SELECTED_CARD}    SPC  #เลือกประเภทบัตร
+${SELECTED_CARD}    CC  #เลือกประเภทบัตร
 #######################################################
 
 
@@ -41,6 +41,7 @@ Open and login SF
         Click Element   locator=//*[@class="button button-secondary" and text()="Try login as"]
 
         ####  ตรวจสอบภาษา ###
+        ${element1}=    Execute JavaScript    return document.evaluate('//*[@type="button" and @title="Show Navigation Menu"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 		${EN}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="Show Navigation Menu"]    5s
 		${TH}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="แสดงเมนูการนำทาง"]    5s
         Log    ${EN}
@@ -54,27 +55,27 @@ Open and login SF
         ...    AND    Click Element    (//span[@class='title slds-truncate' and text()='${Ref no_manaul} | Loan Application'])[1]    
         ...    AND    Sleep    4s
 
-        #Wait Until Element Is Visible    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
+        # Wait Until Element Is Visible    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
 
-        #Click Element    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
-        #Wait Until Element Is Visible    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]
-        #Click Element    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]
-        #Wait Until Element Is Visible    locator=//*[@value="change owner"]
-        #Click Element    locator=//*[@value="change owner"]
-		#
-		#
-        #Wait Until Element Is Not Visible    locator=//*[@value="change owner"]
+        # Click Element    locator=//*[@class="slds-button__icon slds-button__icon_hint"]
+        # Wait Until Element Is Visible    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]
+        # Click Element    locator=//*[@class="primaryLabel slds-truncate slds-lookup__result-text" and text()="Income Maker AuthLevel30"]
+        # Wait Until Element Is Visible    locator=//*[@value="change owner"]
+        # Click Element    locator=//*[@value="change owner"]
+		
+		
+        Wait Until Element Is Not Visible    locator=//*[@value="change owner"]
         Sleep    7s
 
         Wait Until Element Is Visible    //*[text()="Customer Details"]
         Scroll Element With Offset Until Visible    (//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]    0   500    5
         Sleep    6s
-        ${elementXpath}=    Set Variable    (//*[@class="slds-combobox__input slds-input_faux"])[1]
+        ${elementXpath}=    Set Variable    (//button[@role='combobox'][@aria-label=' '])[2]
         Wait Until Element Is Visible    ${elementXpath}
-        Execute Javascript    document.evaluate('(//*[@class="slds-combobox__input slds-input_faux"])[1]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.focus()
+        Execute Javascript    document.evaluate('(//button[@role='combobox'][@aria-label=' '])[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.focus()
         Click Element    ${elementXpath}
-        Wait Until Element Is Visible    xpath://span[@title='รองผู้จัดการใหญ่']
-        Click Element    xpath://span[@title='รองผู้จัดการใหญ่']
+        Wait Until Element Is Visible    xpath=//span[@title='รองผู้จัดการใหญ่']
+        Click Element    xpath=//span[@title='รองผู้จัดการใหญ่']
         
         Run Keyword If    '${SELECTED_CARD}' == '${CARD_TYPE_SPL}'    Account Transfer Details
         Sleep    2s

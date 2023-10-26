@@ -18,9 +18,11 @@ ${Password_sit}    Scb@112233!!!!
 
 ${Saraly}    50000
 
-${Username_uat}    Alonggorn.p@cardx.uat 
-${Password_uat}    Paohub1993#
+# ${Username_uat}    Alonggorn.p@cardx.uat 
+# ${Password_uat}    Paohub1993#
 
+${Username_uat}    patchaya.in@cardx.uat
+${Password_uat}    @Test2542
 
 #${Username_uat}    mongkhon.k.admin@cardx.uat
 #${Password_uat}     PECKKUNG@2542

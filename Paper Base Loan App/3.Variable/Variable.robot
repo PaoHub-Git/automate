@@ -34,10 +34,10 @@ ${Password_uat}    @Test2542
 #${Username_uat}    mongkhon.k.admin@cardx.uat
 #${Password_uat}    PECKKUNG@2542
 
-#${Username_uat}    Alonggorn.p@cardx.uat 
-#${Password_uat}    Paohub1993#
+# ${Username_uat}    Alonggorn.p@cardx.uat 
+# ${Password_uat}    Paohub1993#
 
-${Ref no_manaul}    DP2023100900009
+${Ref no_manaul}    DP2023102500030
 
 
 

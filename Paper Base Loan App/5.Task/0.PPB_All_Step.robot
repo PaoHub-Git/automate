@@ -8,16 +8,16 @@ Resource    ..//1.Setting/Setting.robot
 ${CARD_TYPE_CC}     CC
 ${CARD_TYPE_SPC}    SPC
 ${CARD_TYPE_SPL}    SPL
-${SELECTED_CARD}    SPL  #เลือกประเภทบัตร
+${SELECTED_CARD}    CC  #เลือกประเภทบัตร
 #######################################################
 
 ${NTU}    NTU
 ${ETB}    ETB
-${SELECTED_TYPE}    ETB
+${SELECTED_TYPE}    NTU
 
 #######################################################
 
-${National ID Card Number}    2021070823178
+${National ID Card Number}    3102268973232
 ${mobileNo}    900015699
 ${First Name (TH)}
 ${Last Name (TH)}
@@ -57,10 +57,10 @@ Open and login SF
 		${TH}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="แสดงเมนูการนำทาง"]    5s
 		Wait Until Keyword Succeeds    3x    10s    Log    Waiting for elements...    # รอจนกว่าหนึ่งในสอง text จะปรากฎ ด้วยการลอง 3 ครั้ง แต่ละครั้งระยะห่าง 10 วินาที
 	
-		Run Keyword If    ${TH}    Check For Elements language
+		Run Keyword If    ${TH}    Check For Elements language_1
 
 
-		# ${element3}=    Execute JavaScript    return document.evaluate('//*[@type="button" and @title="Show Navigation Menu" ]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+		${element3}=    Execute JavaScript    return document.evaluate('//*[@type="button" and @title="Show Navigation Menu" ]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
         Wait Until Element Is Visible    locator=//*[@type="button" and @title="Show Navigation Menu" ]
         Click Element   locator=//*[@type="button" and @title="Show Navigation Menu" ]
@@ -201,8 +201,12 @@ Open and login SF
             Click Element    //*[@aria-label="Search"]
             Wait Until Element Is Visible    //*[@type="search" and @placeholder="Search..."]
             Input Text    //*[@type="search" and @placeholder="Search..."]   ${Get_Ref} 
-            Wait Until Element Is Visible    //span/mark[contains(text(), '${Get_Ref}')]
-            Click Element    //span/mark[contains(text(), '${Get_Ref}')]
+
+            ${status}=    Run Keyword And Return Status    Wait Until Keyword Succeeds    3s    1s    Element Should Be Visible    //span[contains(text(), 'Show more results for')]
+            Run Keyword If    ${status}    Reload app no.            
+
+            Wait Until Element Is Visible    //mark[@class="data-match" and text()="${Get_Ref}"]
+            Click Element    //mark[@class="data-match" and text()="${Get_Ref}"]
 
             Sleep    7s
             Execute Javascript    document.evaluate('//*[@title="Document Upload"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
@@ -253,8 +257,8 @@ Open and login SF
             Click Element    //*[@aria-label="Search"]
             Wait Until Element Is Visible    //*[@type="search" and @placeholder="Search..."]
             Input Text    //*[@type="search" and @placeholder="Search..."]   ${Get_Ref}
-            Wait Until Element Is Visible    //span/mark[contains(text(), '${Get_Ref}')]
-            Click Element    //span/mark[contains(text(), '${Get_Ref}')]
+            Wait Until Element Is Visible    //mark[@class="data-match" and text()="${Get_Ref}"]
+            Click Element    //mark[@class="data-match" and text()="${Get_Ref}"]
             Sleep    4s
         Execute Javascript  document.evaluate("${NEXT_BUTTON}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
         
@@ -310,9 +314,9 @@ Open and login SF
         Execute Javascript    window.scrollBy(0, window.innerHeight * 0.5);
 
         Press Keys    //*[@name="firstNameEn"]   CTRL+a+DELETE
-        Input Text    //*[@name="firstNameEn"]    ${englishFirstName}
+        Input Text    //*[@name="firstNameEn"]    alonggorn
         Press Keys    //*[@name="lastNameEn"]    CTRL+a+DELETE
-        Input Text    //*[@name="lastNameEn"]     ${englishLastName}
+        Input Text    //*[@name="lastNameEn"]     deejung
 
         ### Education Level ###
         Click Element    locator=//*[@placeholder="Select education level"]
@@ -324,7 +328,8 @@ Open and login SF
         Click Element    locator=//*[@placeholder="Select marital status"]
             Input Text    locator=(//*[@placeholder="Select marital status"])[2]    text=SINGLE
             Click Element    locator=//*[text()="SINGLE"]
-
+ 
+        Run Keyword If    '${SELECTED_TYPE}' == '${NTU}'    Input Text    //*[@placeholder="Input mobile number"]    ${mobileNo}
         #Input Text    locator=//*[@placeholder="Input mobile number"]    text=900014537
         Press Keys    //input[@name="emailAddressForStatement"]    CTRL+a+DELETE
         Input Text    locator=//*[@inputmode="email"]    text=Testdata01_spc0363@gmail.com
@@ -348,7 +353,7 @@ Open and login SF
             Log    ${random_moo}
             Input Text    locator=//*[@id="moo"]    text=${random_moo}
 
-            Click Element    locator=//*[@placeholder="Input address information."]
+            Click Element    locator=//*[@placeholder="Input sub-district, district, province, postal code"]
             Wait Until Element Is Visible    locator=//*[text()="BANGKOK"]
             Click Element    locator=//*[text()="BANGKOK"]
             Input Text       locator=//*[@placeholder="Search"]    text=DUSIT
@@ -364,8 +369,8 @@ Open and login SF
         Execute Javascript    window.scrollBy(0, window.innerHeight * 0.8);
         
         
-        Click Element    locator=(//*[@type="checkbox"])[1]
-        Click Element    locator=//*[text()="Use address in the national ID card"]      ##เลือก Use address in the national ID card
+        Click Element    locator=//*[text()="Use address as specified in National ID Card"]
+        Click Element    locator=//*[text()="National ID Card"]      ##เลือก Use address in the national ID card
         Sleep    3s
         
         #Click Element    (//*[@class="MuiIconButton-label"])[7]
@@ -413,13 +418,13 @@ Open and login SF
 
         ${building_a} =   Random Building Name      #สุ่มชื่ออาคาร#
         Log   ${building_a}
-        Input Text    locator=//*[@placeholder="Input building name"]    text=${building_a}
+        Input Text    locator=//*[@placeholder="Input building"]    text=${building_a}
 
         ${random_moo_2} =    Generate Random String    1    123456789          #สุ่มเลชหมู่บ้าน#
         Log    ${random_moo_2}
         Input Text    locator=//*[@name="moo"]    text=${random_moo_2}
 
-        Click Element    locator=//*[@placeholder="Input address information."]
+        Click Element    locator=//*[@placeholder="Input sub-district, district, province, postal code"]
         Wait Until Element Is Visible    locator=//*[text()="BANGKOK"]
         Click Element    locator=//*[text()="BANGKOK"]
         Input Text       locator=//*[@placeholder="Search"]    text=DUSIT
@@ -431,8 +436,8 @@ Open and login SF
         Click Element    locator=//*[text()="10300"]
         Scroll Element Into View    (//*[@class="MuiButton-label"])[3]
         Click Element    locator=(//*[@class="MuiButton-label"])[3]       #กด Save #      
-        Wait Until Element Is Visible    locator=//span[@class='MuiButton-label']/div[text()='Continue']
-        Click Element    locator=//span[@class='MuiButton-label']/div[text()='Continue']
+        Wait Until Element Is Visible    locator=//*[text()='Next']
+        Click Element    locator=//*[text()='Next']
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
         Sleep    3s
 
@@ -496,8 +501,8 @@ Open and login SF
             Click Element    //*[@aria-label="Search"]
             Wait Until Element Is Visible    //*[@type="search" and @placeholder="Search..."]
             Input Text    //*[@type="search" and @placeholder="Search..."]   ${Get_Ref}
-            Wait Until Element Is Visible    //span/mark[contains(text(), '${Get_Ref}')]
-            Click Element    //span/mark[contains(text(), '${Get_Ref}')]
+            Wait Until Element Is Visible    //mark[@class="data-match" and text()="${Get_Ref}"]
+            Click Element    //mark[@class="data-match" and text()="${Get_Ref}"]
             Sleep    4s
         Execute Javascript  document.evaluate("${NEXT_BUTTON}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
         
@@ -557,9 +562,9 @@ Open and login SF
         Wait Until Element Is Visible    //span[@class="MuiButton-label"]/div[text()="Confirm application"]
         Click Element    locator=//span[@class="MuiButton-label"]/div[text()="Confirm application"]
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
-        Sleep    2s
-
-        Page Should Contain    Successfully submitted
+        Sleep    4s
+        
+        Wait Until Page Contains    Successfully submitted
 
 
         Switch Window    MAIN
@@ -585,8 +590,8 @@ Open and login SF
             Click Element    //*[@aria-label="Search"]
             Wait Until Element Is Visible    //*[@type="search" and @placeholder="Search..."]
             Input Text    //*[@type="search" and @placeholder="Search..."]   ${Get_Ref}
-            Wait Until Element Is Visible    //span/mark[contains(text(), '${Get_Ref}')]
-            Click Element    //span/mark[contains(text(), '${Get_Ref}')]
+            Wait Until Element Is Visible    //mark[@class="data-match" and text()="${Get_Ref}"]
+            Click Element    //mark[@class="data-match" and text()="${Get_Ref}"]
             Sleep    4s
         Execute Javascript  document.evaluate("${NEXT_BUTTON}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
         
@@ -601,6 +606,8 @@ Open and login SF
         Click Element   locator=//*[@class="button button-secondary" and text()="Try login as"]
 
         ####  ตรวจสอบภาษา ###
+        ${element1}=    Execute JavaScript    return document.evaluate('//*[@type="button" and @title="Show Navigation Menu"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+		Should Not Be Equal    ${element1}    None    msg=Element not found.
 		${EN}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="Show Navigation Menu"]    5s
 		${TH}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="แสดงเมนูการนำทาง"]    5s
         Log    ${EN}
@@ -628,9 +635,9 @@ Open and login SF
         Wait Until Element Is Visible    //*[text()="Customer Details"]
         Scroll Element With Offset Until Visible    (//*[@class="slds-text-body_regular1 slds-text-align_left"])[3]    0   500    5
         Sleep    6s
-        ${elementXpath}=    Set Variable    (//*[@class="slds-combobox__input slds-input_faux"])[1]
+        ${elementXpath}=    Set Variable    (//button[@role='combobox'][@aria-label=' '])[2]
         Wait Until Element Is Visible    ${elementXpath}
-        Execute Javascript    document.evaluate('(//*[@class="slds-combobox__input slds-input_faux"])[1]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.focus()
+        Execute Javascript    document.evaluate('(//button[@role='combobox'][@aria-label=' '])[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.focus()
         Click Element    ${elementXpath}
         Wait Until Element Is Visible    xpath://span[@title='รองผู้จัดการใหญ่']
         Click Element    xpath://span[@title='รองผู้จัดการใหญ่']
@@ -655,8 +662,8 @@ Open and login SF
         Click Element    //*[@aria-label="Search"]
         Wait Until Element Is Visible    //*[@type="search" and @placeholder="Search..."]
         Input Text    //*[@type="search" and @placeholder="Search..."]   ${Get_Ref}
-        Wait Until Element Is Visible    //span/mark[contains(text(), '${Get_Ref}')]
-        Click Element    //span/mark[contains(text(), '${Get_Ref}')]
+        Wait Until Element Is Visible    //mark[@class="data-match" and text()="${Get_Ref}"]
+        Click Element    //mark[@class="data-match" and text()="${Get_Ref}"]
         Sleep    5s
 
 		FOR    ${i}    IN RANGE    20    # 5 วินาที x 20 = 100 วินาที หรือ 1 นาที 40 วินาที
@@ -755,8 +762,8 @@ Open and login SF
         Click Element    //*[@aria-label="Search"]
         Wait Until Element Is Visible    //*[@type="search" and @placeholder="Search..."]
         Input Text    //*[@type="search" and @placeholder="Search..."]   ${Get_Ref}
-        Wait Until Element Is Visible    //span/mark[contains(text(), '${Get_Ref}')]
-        Click Element    //span/mark[contains(text(), '${Get_Ref}')]
+        Wait Until Element Is Visible    //mark[@class="data-match" and text()="${Get_Ref}"]
+        Click Element    //mark[@class="data-match" and text()="${Get_Ref}"]
         Sleep    4s
 
 
@@ -772,12 +779,20 @@ Open and login SF
         Wait Until Element Is Visible   locator=//*[@class="button button-secondary" and text()="Try login as"]
         Click Element   locator=//*[@class="button button-secondary" and text()="Try login as"]
 
-        ####  ตรวจสอบภาษา ###
+       ####  ตรวจสอบภาษา ###
+        ${element1}=    Execute JavaScript    return document.evaluate('//*[@type="button" and @title="Show Navigation Menu"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 		${EN}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="Show Navigation Menu"]    5s
 		${TH}=    Run Keyword And Return Status    Wait Until Element Is Visible    //*[@type="button" and @title="แสดงเมนูการนำทาง"]    5s
         Log    ${EN}
         Log    ${TH}
 		Wait Until Keyword Succeeds    3x    10s    Log    Waiting for elements...    # รอจนกว่าหนึ่งในสอง text จะปรากฎ ด้วยการลอง 3 ครั้ง แต่ละครั้งระยะห่าง 10 วินาที
+	    
+		Run Keyword If    ${TH}    
+        ...    Run Keywords
+        ...    Check For Elements language    
+        ...    AND    Wait Until Element Is Visible    (//span[@class='title slds-truncate' and text()='${Get_Ref} | Loan Application'])[1]    
+        ...    AND    Click Element    (//span[@class='title slds-truncate' and text()='${Get_Ref} | Loan Application'])[1]    
+        ...    AND    Sleep    4s
 	    
 		Run Keyword If    ${TH}    
         ...    Run Keywords
