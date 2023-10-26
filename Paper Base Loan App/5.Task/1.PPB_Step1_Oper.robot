@@ -140,7 +140,7 @@ Open and login SF
             Input Text    //*[@type="search" and @placeholder="Search..."]   ${Ref no_manaul}
 
             ${status}=    Run Keyword And Return Status    Wait Until Keyword Succeeds    3s    1s    Element Should Be Visible    //span[contains(text(), 'Show more results for')]
-            Run Keyword If    ${status}    Reload app no.
+            Run Keyword If    ${status}    Reload app no..
 
             Wait Until Element Is Visible    //span/mark[contains(text(), '${Ref no_manaul}')]
             Click Element    //span/mark[contains(text(), '${Ref no_manaul}')]
