@@ -4,7 +4,7 @@ Resource    ..//1.Setting/Setting.robot
 *** Variables ***
 
 
-${CHROMEDRIVER_PATH}    C:\\Chromedriver\\chromedriver.exe
+${CHROMEDRIVER_PATH}    C:\\Program Files\\Python39\\chromedriver.exe
 ${BROWSER}    Chrome
 ${PROFILE_PATH}    C:\\Users\\Alonggorn Panthong\\AppData\\Local\\Google\\Chrome\\User Data
 ${URL}    https://cardxscb--uat.sandbox.my.salesforce.com/ 
