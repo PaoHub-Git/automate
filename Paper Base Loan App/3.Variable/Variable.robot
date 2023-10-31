@@ -7,9 +7,9 @@ Resource    ..//1.Setting/Setting.robot
 *** Variables ***
 
 ${NEXT_BUTTON}       //div[@class='insext-btn' and @title='Show Salesforce details (Alt+I / Shift+Alt+I)']
-${CHROMEDRIVER_PATH}    C:\\Chromedriver\\chromedriver.exe
+${CHROMEDRIVER_PATH}    C:\\CHROMEDRIVER\\chromedriver.exe
 ${BROWSER}    gc
-${PROFILE_PATH}    C:\\Users\\Alonggorn Panthong\\AppData\\Local\\Google\\Chrome\\User Data
+${PROFILE_PATH}    C:\\Users\\Work\\AppData\\Local\\Google\\Chrome\\User Data
 
 ${URL}    https://cardxscb--uat.sandbox.my.salesforce.com/ 
 #${URL}    https://cardxscb--sit2.sandbox.lightning.force.com/

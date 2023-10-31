@@ -220,7 +220,7 @@ Open and login SF
             Click Element    locator=(//*[text()="Upload"])[1]
             Wait Until Element Is Visible    locator=//*[text()="Add photo"]
 
-            Choose File    id=selectImage    file_path=D:\\test.jpg
+            Choose File    id=selectImage    file_path=D:\\automate\\Setup\\test.jpg
 
             Execute Javascript    window.scrollTo(0, document.body.scrollHeight);
             Wait Until Element Is Visible    locator=//*[text()="Done"]

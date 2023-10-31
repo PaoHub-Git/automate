@@ -35,7 +35,13 @@ ${account number}    1113909131
     Click Element    id=Login
     Pause Execution    Please enter "Salesforce Authenticator"
 
-
+# get_chrome_options
+#     [Arguments]    ${profile_path}    ${profile_directory}
+#     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+#     Call Method    ${chrome_options}    add_argument    user-data-dir=${profile_path}
+#     ${profile_arg}=    Set Variable    profile-directory=${profile_directory}
+#     Call Method    ${chrome_options}    add_argument    ${profile_arg}
+#     [Return]    ${chrome_options}
 
 
 Credit Card
