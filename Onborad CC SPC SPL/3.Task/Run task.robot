@@ -7,8 +7,9 @@ Resource    ..//1.Setting/Setting.robot
 
 ${URL_A}    https://kidhaina.com/thainamegenerator.html
 ${URL_B}    https://kidhaina.com/citizenid.html
+${URL}    https://cardxscb--uat.sandbox.my.salesforce.com/?ec=302&startURL=%2Fvisualforce%2Fsession%3Furl%3Dhttps%253A%252F%252Fcardxscb--uat.sandbox.lightning.force.com%252Fvisualforce%252Fsession%253Furl%253Dhttps%25253A%25252F%25252Fcardxscb--uat--c.sandbox.vf.force.com%25252Fapex%25252FSLS_AssistedSalesApp
 #${URL}    https://cardxscb--sit2.sandbox.my.salesforce.com/?ec=302&startURL=%2Fvisualforce%2Fsession%3Furl%3Dhttps%253A%252F%252Fcardxscb--sit2.sandbox.lightning.force.com%252Fvisualforce%252Fsession%253Furl%253Dhttps%25253A%25252F%25252Fcardxscb--sit2--c.sandbox.vf.force.com%25252Fapex%25252FSLS_AssistedSalesApp
-${URL}    https://test.salesforce.com/?ec=302&startURL=%2Fvisualforce%2Fsession%3Furl%3Dhttps%253A%252F%252Fcardxscb--uat--c.sandbox.vf.force.com%252Fapex%252FSLS_AssistedSalesApp
+#${URL}    https://test.salesforce.com/?ec=302&startURL=%2Fvisualforce%2Fsession%3Furl%3Dhttps%253A%252F%252Fcardxscb--uat--c.sandbox.vf.force.com%252Fapex%252FSLS_AssistedSalesApp
 ${random_House_number}=    Generate Random Number    100    999
 
 
@@ -34,7 +35,7 @@ ${Sales code 1_uat}     VB001
 
 
 
-${FILE_PATH}    C:\\Users\\Alonggorn Panthong\\Documents\\DATA_ONBORAD (1).xlsx   ##กำหนด PATH ไฟลที่จะดึงข้อมูลมาใช้งาน
+${FILE_PATH}    D:\\automate\\Setup\\DATA_ONBORAD (1).xlsx   ##กำหนด PATH ไฟลที่จะดึงข้อมูลมาใช้งาน
 ${MAX_ROW}    16           ##กำหนดให้ค่ามากกว่าข้อมูลในไฟล์ EXCEL มากกว่า 1 เสมอ เช่น ในข้อมูลมี 5 แถว ให้กำหนดเปน 6
 ${CONTINUE_LOOP}  CONTINUE
 ${EMPTY}    ""
@@ -45,16 +46,16 @@ ${CARD_TYPE_CC}     CC
 ${CARD_TYPE_SPC}    SPC
 ${CARD_TYPE_SPL}    SPL
 
-${SELECTED_CARD}    SPL  #เลือกประเภทบัตร
+${SELECTED_CARD}    CC  #เลือกประเภทบัตร
 
 #${Product}    //*[@src="https://cdx-sit2-ssc-frontend.np.cardx.co.th/992x992_px_06_d6fab2d1bf.png"]                                       ### VISA CARD ###
 #${Product}    //*[@src='https://cdx-sit2-ssc-frontend.np.cardx.co.th/sqaurecardimage_dev2_f072886255.jpg']                                ### MASTER CARD ###
 #${Product}    //*[@src="https://cdx-uat2-ssc-frontend.np.cardx.co.th/992x992_px_01_252d6298ed.png"]                                       ### CardX SPEEDY CASH ###
 
 #${Product}    //*[text()="CardX XTRA PLATINUM"]                  ### Master card_uat ###
-#${Product}    //*[text()="CardX XTRA PLATINUM "]                   ### Visa Card_uat ###
+${Product}    //*[text()="CardX XTRA PLATINUM "]                   ### Visa Card_uat ###
 #${Product}    //*[text()="CardX SPEEDY CASH"]                      ### CardX SPEEDY CASH UAT ###
-${Product}    //*[text()="CardX SPEEDY LOAN"]                      ### CardX SPEEDY LOAN UAT ###
+#${Product}    //*[text()="CardX SPEEDY LOAN"]                      ### CardX SPEEDY LOAN UAT ###
 #${Product}      //*[text()="CardX SPEEDY LOAN BALANCE TRANSFER"]      ### CardX SPEEDY LOAN BALANCE TRANSFER ###
 
 ########################################################
@@ -65,8 +66,8 @@ ${Product}    //*[text()="CardX SPEEDY LOAN"]                      ### CardX SPE
 # ${Select installment period (month)}    24
 # ${Select installment period (month)}    36
 # ${Select installment period (month)}    48
-# ${Select installment period (month)}    60
-${Select installment period (month)}    72
+${Select installment period (month)}    60
+#${Select installment period (month)}    72
 
 #### Select bank account SPL ###
 ${Saving Account}    (//div[div[text()="Saving Account"])[1]
@@ -207,17 +208,22 @@ Onboarding And Get Names
         Input Text    name=birthDate    ${formatted_date}
         clil svae mockup data
 
-        Click Element    //*[text()="Dip Chip"]      # คลิกDip Chip
-        #Sleep    15s
-    
         Wait Until Element Is Visible    //*[text()="Next"] 
         Click Element    //*[text()="Next"] 
+        # Click Element    //*[text()="Dip Chip"]      # คลิกDip Chip
+        #Sleep    15s
+        Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
+        Sleep    7s
+        
+        Wait Until Element Is Visible    (//*[text()='Next'])[2]
+        Click Element    (//*[text()='Next'])[2]
+        # Execute Javascript    document.evaluate("//*[text()='Next']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
         Wait Until Element Is Visible    //*[text()="Customer Photo"]
         Sleep    2s
         Execute Javascript    window.scrollTo(0, document.body.scrollHeight);
         #Execute JavaScript    window.scrollBy(0, 300)
-        Choose File    id=file1    D:\\test.jpg
+        Choose File    id=file1    D:\\automate\\Setup\\test.jpg
         Click Element    //*[text()="Confirm"]
         Click Element    //*[text()="Yes"]
         Wait Until Element Is Not Visible    //*[text()="Please wait"]
@@ -258,7 +264,7 @@ Onboarding And Get Names
         ...    Run Keywords
         ...    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight / 2);
         ...    AND    Sleep    5s
-        ...    AND    Drag And Drop By Offset    //span[@class="MuiSlider-root jss632 MuiSlider-colorPrimary"]    50    0
+        ...    AND    Drag And Drop By Offset    //span[contains(@class, 'MuiSlider-colorPrimary')]   50    0
         ...    AND    Click Element    //*[text()="${Select installment period (month)}"]
         ...    AND    Sleep    3s
         ...    AND    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
@@ -403,7 +409,7 @@ Onboarding And Get Names
 
 		Click Element    //*[text()="Add photo"]
         Sleep    2s
-        Choose File   xpath=//*[@id="selectImage"]    D:\\test.jpg
+        Choose File   xpath=//*[@id="selectImage"]    D:\\automate\\Setup\\test.jpg
         Sleep    3s
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
         Sleep    1s

@@ -4,9 +4,9 @@ Resource    ..//1.Setting/Setting.robot
 *** Variables ***
 
 
-${CHROMEDRIVER_PATH}    C:\\Chromedriver\\chromedriver.exe
+${CHROMEDRIVER_PATH}    C:\\Program Files\\Python39\\chromedriver.exe
 ${BROWSER}    Chrome
-${PROFILE_PATH}    C:\\Users\\Alonggorn Panthong\\AppData\\Local\\Google\\Chrome\\User Data
+${PROFILE_PATH}    C:\\Users\\Work\\AppData\\Local\\Google\\Chrome\\User Data
 ${URL}    https://cardxscb--uat.sandbox.my.salesforce.com/ 
 #${URL}    https://cardxscb--sit2.sandbox.lightning.force.com/
 
@@ -18,11 +18,11 @@ ${Password_sit}    Scb@112233!!!!
 
 ${Saraly}    50000
 
-# ${Username_uat}    Alonggorn.p@cardx.uat 
-# ${Password_uat}    Paohub1993#
+${Username_uat}    Alonggorn.p@cardx.uat 
+${Password_uat}    Paohub1993#
 
-${Username_uat}    patchaya.in@cardx.uat
-${Password_uat}    @Test2542
+# ${Username_uat}    patchaya.in@cardx.uat
+# ${Password_uat}    @Test2542
 
 #${Username_uat}    mongkhon.k.admin@cardx.uat
 #${Password_uat}     PECKKUNG@2542

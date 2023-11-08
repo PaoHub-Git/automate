@@ -75,27 +75,29 @@ Add detail spc
 
         Click Element        //*[text()="Next"]
 
-
-
         Wait Until Element Is Not Visible    //*[text()="Please wait"]
         Sleep    3s
         Click Element    //*[text()="Don't have"]
-        Click Element        //*[text()="Continue"]
+        Click Element        //*[text()="Next"]
 
 
 
         Wait Until Element Is Not Visible    //*[text()="Please wait"]
         Sleep    3s
         Click Element    //*[text()="Not receive"]
-        Click Element        //*[text()="Continue"]
+        Click Element        //*[text()="Next"]
 
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
 
 
 
 Input data
+    Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
+    Sleep    5s
     Wait Until Element Is Visible   //*[text()='mockup data']
-    Execute JavaScript    window.scrollBy(0, 300)
+    # Execute JavaScript    window.scrollBy(0, 300)
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+
     Click Element                  //*[text()='mockup data']
     Click Element        //*[text()="2021061790700"]
 
@@ -290,7 +292,7 @@ Add detail spl
         Sleep    3s
         Wait Until Element Is Visible    //*[text()="Don't have"]
         Click Element    //*[text()="Don't have"]
-        Click Element        //*[text()="Continue"]
+        Click Element        //*[text()="Next"]
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
 
 Select add account number or not
@@ -512,7 +514,7 @@ Upload picture
 
 		Click Element    //*[text()="Add photo"]
         Sleep    3s
-        Choose File   xpath=//*[@id="selectImage"]    D:\\test.jpg
+        Choose File   xpath=//*[@id="selectImage"]    D:\\automate\\Setup\\test.jpg
         Sleep    3s
         Wait Until Element Is Not Visible    locator=//*[text()="Please wait"]
         Sleep    1s
