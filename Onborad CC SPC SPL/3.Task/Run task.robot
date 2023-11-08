@@ -36,7 +36,7 @@ ${Sales code 1_uat}     VB001
 
 
 ${FILE_PATH}    D:\\automate\\Setup\\DATA_ONBORAD (1).xlsx   ##กำหนด PATH ไฟลที่จะดึงข้อมูลมาใช้งาน
-${MAX_ROW}    16           ##กำหนดให้ค่ามากกว่าข้อมูลในไฟล์ EXCEL มากกว่า 1 เสมอ เช่น ในข้อมูลมี 5 แถว ให้กำหนดเปน 6
+${MAX_ROW}    15           ##กำหนดให้ค่ามากกว่าข้อมูลในไฟล์ EXCEL มากกว่า 1 เสมอ เช่น ในข้อมูลมี 5 แถว ให้กำหนดเปน 6
 ${CONTINUE_LOOP}  CONTINUE
 ${EMPTY}    ""
 
@@ -52,8 +52,8 @@ ${SELECTED_CARD}    CC  #เลือกประเภทบัตร
 #${Product}    //*[@src='https://cdx-sit2-ssc-frontend.np.cardx.co.th/sqaurecardimage_dev2_f072886255.jpg']                                ### MASTER CARD ###
 #${Product}    //*[@src="https://cdx-uat2-ssc-frontend.np.cardx.co.th/992x992_px_01_252d6298ed.png"]                                       ### CardX SPEEDY CASH ###
 
-#${Product}    //*[text()="CardX XTRA PLATINUM"]                  ### Master card_uat ###
-${Product}    //*[text()="CardX XTRA PLATINUM "]                   ### Visa Card_uat ###
+${Product}    //*[text()="CardX XTRA PLATINUM"]                  ### Master card_uat ###
+#${Product}    //*[text()="CardX XTRA PLATINUM "]                   ### Visa Card_uat ###
 #${Product}    //*[text()="CardX SPEEDY CASH"]                      ### CardX SPEEDY CASH UAT ###
 #${Product}    //*[text()="CardX SPEEDY LOAN"]                      ### CardX SPEEDY LOAN UAT ###
 #${Product}      //*[text()="CardX SPEEDY LOAN BALANCE TRANSFER"]      ### CardX SPEEDY LOAN BALANCE TRANSFER ###
